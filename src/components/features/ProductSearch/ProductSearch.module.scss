@@ -12,6 +12,7 @@
     align-items: center;
     position: relative;
 
+
     .icon:first-child {
       color: $primary;
       position: absolute;
@@ -19,11 +20,13 @@
       z-index: 0;
     }
 
+
     .icon:last-child {
       position: absolute;
       right: 10px;
       z-index: 0;
     }
+
 
     select {
       -webkit-appearance: none;
@@ -32,6 +35,8 @@
       padding: 5px 30px 5px 35px;
       position: relative;
       z-index: 1;
+      font-size: 16px;
+      outline: none;
     }
   }
 
@@ -47,7 +52,8 @@
       outline: none;
 
       &::placeholder {
-        color: $text-color;
+        color: $text-color-gray;
+        font-size: 14px;
       }
     }
 
@@ -55,6 +61,11 @@
       border: 0;
       background-color: transparent;
       outline: none;
+
+      :hover {
+       color: $menu-color-hover;
+        transition-duration: 0.05s;
+      }
     }
   }
 }
