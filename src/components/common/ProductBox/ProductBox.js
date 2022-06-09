@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
 
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,12 +15,10 @@ import { toggleFavoriteProduct } from '../../../redux/productsRedux';
 
 const ProductBox = ({ name, price, promo, stars, isFavorite, id }) => {
   const dispatch = useDispatch();
-  const [favorite, setIsFavorite] = useState(isFavorite);
   const productId = id;
 
   const handleClick = e => {
     e.preventDefault();
-    setIsFavorite(!favorite);
     dispatch(toggleFavoriteProduct(productId));
   };
 
@@ -55,7 +52,7 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, id }) => {
         <div className={styles.outlines}>
           <Button
             variant='outline'
-            className={favorite ? styles.isFavorite : ''}
+            className={isFavorite ? styles.isFavorite : ''}
             onClick={handleClick}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
