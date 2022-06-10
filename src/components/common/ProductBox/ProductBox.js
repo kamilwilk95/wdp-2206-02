@@ -13,7 +13,7 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 import { toggleFavoriteProduct } from '../../../redux/productsRedux';
 
-const ProductBox = ({ name, price, promo, stars, isFavorite, id }) => {
+const ProductBox = ({ name, price, promo, stars, isFavorite, id, priceOld }) => {
   const dispatch = useDispatch();
   const productId = id;
 
@@ -61,6 +61,13 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, id }) => {
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
+        {priceOld && (
+          <div className={styles.priceold}>
+            <Button noHover variant='light'>
+              $ {priceOld}
+            </Button>
+          </div>
+        )}
         <div className={styles.price}>
           <Button noHover variant='small'>
             $ {price}
@@ -74,6 +81,7 @@ ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
+  priceOld: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
   isFavorite: PropTypes.bool,

@@ -12,6 +12,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 1',
       category: 'bed',
       price: 30,
+      priceOld: 45,
       stars: 2,
       promo: 'sale',
       newFurniture: true,
