@@ -4,15 +4,16 @@ import PropTypes from 'prop-types';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
+import clsx from 'clsx';
 
 const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
-      <div className='row align-items-center d-xs-inline-flex '>
-        <div className={'col-sm-6 order-sm-2'}>
+      <div className='row align-items-center d-xs-inline-block'>
+        <div className={'col order-xs-2'}>
           <ProductSearch />
         </div>
-        <div className={'col-sm-6  ' + styles.menu}>
+        <div className={clsx('col-auto ', 'order-xs-1', styles.menu)}>
           <ul>
             <li>
               <a href='#' className={styles.active}>
