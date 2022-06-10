@@ -8,11 +8,11 @@ import styles from './MenuBar.module.scss';
 const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
-      <div className='row align-items-center'>
-        <div className='col'>
+      <div className='row align-items-center d-xs-inline-flex '>
+        <div className={'col-sm-6 order-sm-2'}>
           <ProductSearch />
         </div>
-        <div className={'col-auto ' + styles.menu}>
+        <div className={'col-sm-6  ' + styles.menu}>
           <ul>
             <li>
               <a href='#' className={styles.active}>
