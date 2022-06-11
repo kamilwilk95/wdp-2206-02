@@ -6,6 +6,7 @@ export const getIsFavorite = ({ products }) =>
 export const getProductById = ({ products }, productId) =>
   products.find(product => product.id === productId);
 
+
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
@@ -14,11 +15,13 @@ const createActionName = actionName => `app/products/${actionName}`;
 const TOGGLE_PRODUCT_FAVORITE = createActionName('TOGGLE_PRODUCT_FAVORITE');
 const UPDATE_REVIEW = createActionName('UPDATE_REVIEW');
 
+
 /* action creators */
 export const toggleFavoriteProduct = payload => ({
   type: TOGGLE_PRODUCT_FAVORITE,
   payload,
 });
+
 export const updateRating = payload => ({
   type: UPDATE_REVIEW,
   payload,

@@ -9,6 +9,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { toggleFavoriteProduct } from '../../../redux/productsRedux';
 import StarsRating from '../../features/StarsRating/StarsRating';
+
 const ProductBox = ({
   name,
   price,
@@ -21,7 +22,7 @@ const ProductBox = ({
 }) => {
   const dispatch = useDispatch();
   const productId = id;
-
+  
   const handleClick = e => {
     e.preventDefault();
     dispatch(toggleFavoriteProduct(productId));
