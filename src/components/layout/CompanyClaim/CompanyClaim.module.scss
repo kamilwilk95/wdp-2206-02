@@ -61,6 +61,25 @@
         top: 50%;
         right: 0;
         transform: translate(50%, -50%);
+
+        .oneDigit {
+          padding-left: 0;
+        }
+        .twoDigits {
+          padding-left: 10px;
+        }
+
+        .threeDigits {
+          padding-left: 15px;
+        }
+
+        .fourDigits {
+          padding-left: 20px;
+        }
+        .fiveDigits {
+          padding-left: 30px;
+        }
+
       }
 
       &:hover {
