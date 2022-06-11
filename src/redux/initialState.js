@@ -252,6 +252,9 @@ const initialState = {
   cart: {
     products: [],
   },
+  settings: {
+    mediaQuery: 'desktop',
+  },
 };
 
 export default initialState;
