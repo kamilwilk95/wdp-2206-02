@@ -35,6 +35,7 @@
       border-top: 4px solid $background-white;
       font-weight: 500;
       letter-spacing: 1px;
+      @extend %transition-animation;
 
       &:hover,
       &.active {
