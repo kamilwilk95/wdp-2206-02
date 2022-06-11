@@ -10,6 +10,7 @@
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
+  @extend %transition-animation;
 
   &:not(.noHover):hover {
     color: $background-white !important;
@@ -33,6 +34,7 @@
   color: $footer-claim-bg;
   font-size: 13px;
   line-height: 22px;
+  @extend %transition-animation;
 
   &:not(.noHover):hover {
     background-color: $footer-claim-bg;

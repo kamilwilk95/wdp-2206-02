@@ -15,6 +15,7 @@
       a {
         color: $background-white;
         font-size: 13px;
+        @extend %transition-animation;
 
         &:hover {
           color: $primary;
