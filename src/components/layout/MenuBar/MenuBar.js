@@ -9,7 +9,7 @@ import clsx from 'clsx';
 const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
-      <div className='row align-items-center d-xs-inline-block'>
+      <div className='row align-items-center'>
         <div className={'col order-xs-2'}>
           <ProductSearch />
         </div>
