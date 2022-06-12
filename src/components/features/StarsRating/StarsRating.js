@@ -11,13 +11,10 @@ import Button from '../../common/Button/Button';
 
 const StarsRating = ({ id, ownStars, stars }) => {
   const dispatch = useDispatch();
-
-  const [rating, setRating] = useState(ownStars || 0);
   const [hover, setHover] = useState(0);
 
   const updateStars = ({ id, star, event }) => {
     event.preventDefault();
-    setRating(star);
     dispatch(updateRating({ productId: id, ownStars: star }));
   };
 
@@ -28,7 +25,7 @@ const StarsRating = ({ id, ownStars, stars }) => {
           <FontAwesomeIcon
             icon={star <= (hover || ownStars || stars) ? faStar : farStar}
             onMouseEnter={() => setHover(star)}
-            onMouseLeave={() => setHover(rating)}
+            onMouseLeave={() => setHover(!ownStars ? stars : ownStars)}
             className={ownStars || hover ? styles.ownStars : styles.stars}
           ></FontAwesomeIcon>
         </Button>
