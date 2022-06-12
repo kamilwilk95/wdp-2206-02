@@ -4,28 +4,27 @@ import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { useEffect } from 'react';
-import { getScreenSize } from '../../../redux/settingsReducer';
+import { getMediaQuery, getScreenSize } from '../../../redux/settingsReducer';
 import { useDispatch } from 'react-redux';
-
+import { useSelector } from 'react-redux';
+import { DESKTOP, TABLET, MOBILE } from '../../../settings/settings';
 const MainLayout = ({ children }) => {
-  const [viewPort, setViewPort] = useState('');
   const dispatch = useDispatch();
+
+  const screenSize = useSelector(getMediaQuery);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 767) {
-        setViewPort('desktop');
-      } else if (window.innerWidth < 767 && window.innerWidth > 576) {
-        setViewPort('tablet');
-      } else if (window.innerWidth < 576) {
-        setViewPort('mobile');
-      }
-      if (viewPort === 'desktop') {
-        dispatch(getScreenSize({ mediaQuery: 'desktop' }));
-      } else if (viewPort === 'tablet') {
-        dispatch(getScreenSize({ mediaQuery: 'tablet' }));
-      } else if (viewPort === 'mobile') {
-        dispatch(getScreenSize({ mediaQuery: 'mobile' }));
+      if (window.innerWidth > 767 && screenSize != DESKTOP) {
+        dispatch(getScreenSize({ mediaQuery: DESKTOP }));
+      } else if (
+        window.innerWidth < 767 &&
+        window.innerWidth > 576 &&
+        screenSize != TABLET
+      ) {
+        dispatch(getScreenSize({ mediaQuery: TABLET }));
+      } else if (window.innerWidth < 576 && screenSize != MOBILE) {
+        dispatch(getScreenSize({ mediaQuery: MOBILE }));
       }
     };
     window.addEventListener('resize', handleResize);
@@ -34,7 +33,7 @@ const MainLayout = ({ children }) => {
       window.removeEventListener('resize', handleResize);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [viewPort]);
+  }, [screenSize]);
 
   return (
     <div>
