@@ -10,10 +10,10 @@ const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row align-items-center'>
-        <div className={'col order-xs-2'}>
+        <div className={'col order-1 order-xs-2'}>
           <ProductSearch />
         </div>
-        <div className={clsx('col-auto ', 'order-xs-1', styles.menu)}>
+        <div className={clsx('col-auto order-2 order-xs-1', styles.menu)}>
           <ul>
             <li>
               <a href='#' className={styles.active}>

@@ -14,7 +14,7 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
-      image: './images/fornitures-bed.jpg',
+      image: './images/fornitures-bed-1.jpg',
       newFurniture: true,
     },
     {
@@ -24,6 +24,7 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      image: './images/fornitures-bed-2.jpg',
       newFurniture: true,
     },
     {
@@ -33,6 +34,7 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      image: './images/fornitures-bed-3.jpg',
       newFurniture: true,
     },
     {
@@ -42,6 +44,7 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      image: './images/fornitures-bed-4.jpg',
       newFurniture: true,
     },
     {
@@ -51,6 +54,7 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      image: './images/fornitures-bed-5.jpg',
       newFurniture: true,
     },
     {
@@ -60,6 +64,7 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      image: './images/fornitures-bed-6.jpg',
       newFurniture: true,
     },
     {
@@ -69,6 +74,7 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      image: './images/fornitures-bed-7.jpg',
       newFurniture: true,
     },
     {
@@ -78,6 +84,7 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      image: './images/fornitures-bed-8.jpg',
       newFurniture: true,
     },
     {
@@ -87,6 +94,7 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      image: './images/fornitures-bed-9.jpg',
       newFurniture: true,
     },
     {
@@ -96,6 +104,7 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      image: './images/fornitures-bed-10.jpg',
       newFurniture: true,
     },
     {
