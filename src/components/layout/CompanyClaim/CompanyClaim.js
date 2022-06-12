@@ -9,7 +9,7 @@ import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons
 const CompanyClaim = () => (
   <div className={styles.root}>
     <div className='container'>
-      <div className='row align-items-center wrapper'>
+      <div className='row align-items-center'>
         <div
           className={`col-sm-12 col-md-4 order-3 order-md-1 text-left ${styles.phoneNumber}`}
         >
