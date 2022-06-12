@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
-import clsx from 'clsx';
 
 const MenuBar = ({ children }) => (
   <div className={styles.root}>
@@ -28,7 +28,10 @@ const MenuBar = ({ children }) => (
               <span className='navbar-toggler-icon'></span>
             </button>
             <div
-              className={clsx('col-auto order-sm-1 collapse', styles.menu)}
+              className={clsx(
+                'col-auto order-sm-1 navbar-expand-xs collapse',
+                styles.menu
+              )}
               id='mobile-menu'
             >
               <ul className='navbar-nav'>
