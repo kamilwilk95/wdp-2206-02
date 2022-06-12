@@ -9,6 +9,8 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { toggleFavoriteProduct } from '../../../redux/productsRedux';
 import StarsRating from '../../features/StarsRating/StarsRating';
+import { toggleProductCompare } from '../../../redux/productsRedux';
+
 
 const ProductBox = ({
   name,
@@ -19,6 +21,7 @@ const ProductBox = ({
   id,
   priceOld,
   ownStars,
+  compare,
 }) => {
   const dispatch = useDispatch();
   const productId = id;
@@ -26,6 +29,11 @@ const ProductBox = ({
   const handleClick = e => {
     e.preventDefault();
     dispatch(toggleFavoriteProduct(productId));
+  };
+
+  const handleCompare = e => {
+    e.preventDefault();
+    dispatch(toggleProductCompare(productId));
   };
 
   return (
@@ -53,7 +61,11 @@ const ProductBox = ({
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button
+            variant='outline'
+            className={compare ? styles.compare : ''}
+            onClick={handleCompare}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -83,6 +95,7 @@ ProductBox.propTypes = {
   isFavorite: PropTypes.bool,
   id: PropTypes.string,
   ownStars: PropTypes.number,
+  compare: PropTypes.bool,
 };
 
 export default ProductBox;
