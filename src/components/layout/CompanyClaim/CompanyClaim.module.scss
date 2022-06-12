@@ -23,6 +23,11 @@
         margin-right: 0.8rem;
       }
     }
+    @media all and (max-width: 768px) {
+      p {
+        font-size: 14px;
+      }
+    }
   }
 
   .cart {
@@ -70,6 +75,9 @@
           background-color: lighten($primary, 10%);
         }
       }
+    }
+    @media all and (max-width: 768px) {
+      margin-bottom: 25px;
     }
   }
 }
