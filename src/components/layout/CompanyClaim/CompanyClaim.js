@@ -4,12 +4,8 @@ import styles from './CompanyClaim.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
-import { useSelector } from 'react-redux';
-import { getCount } from '../../../redux/cartRedux';
 
 const CompanyClaim = () => {
-  const cartLength = useSelector(getCount);
-
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -31,7 +27,7 @@ const CompanyClaim = () => {
                 <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
               </div>
               <div className={styles.cartCounter}>
-                {cartLength >= 99999 ? 99999 : cartLength}
+                <span>599</span>
               </div>
             </a>
           </div>
