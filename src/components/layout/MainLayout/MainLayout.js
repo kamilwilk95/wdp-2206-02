@@ -15,15 +15,15 @@ const MainLayout = ({ children }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 767 && screenSize != DESKTOP) {
+      if (window.innerWidth > 767 && screenSize !== DESKTOP) {
         dispatch(getScreenSize({ mediaQuery: DESKTOP }));
       } else if (
         window.innerWidth < 767 &&
         window.innerWidth > 576 &&
-        screenSize != TABLET
+        screenSize !== TABLET
       ) {
         dispatch(getScreenSize({ mediaQuery: TABLET }));
-      } else if (window.innerWidth < 576 && screenSize != MOBILE) {
+      } else if (window.innerWidth < 576 && screenSize !== MOBILE) {
         dispatch(getScreenSize({ mediaQuery: MOBILE }));
       }
     };
