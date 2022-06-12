@@ -54,32 +54,14 @@
         background-color: $header-bg;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         font-size: 14px;
-        color: rgb(224, 227, 237);
+        color: $background-white;
         position: absolute;
         top: 50%;
         right: 0;
         transform: translate(50%, -50%);
-
-        .oneDigit {
-          padding-left: 0;
-        }
-        .twoDigits {
-          padding-left: 10px;
-        }
-
-        .threeDigits {
-          padding-left: 15px;
-        }
-
-        .fourDigits {
-          padding-left: 20px;
-        }
-        .fiveDigits {
-          padding-left: 30px;
-        }
-
+        padding-left: $base-padding*0.3;
       }
 
       &:hover {

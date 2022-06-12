@@ -31,23 +31,7 @@ const CompanyClaim = () => {
                 <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
               </div>
               <div className={styles.cartCounter}>
-                <span
-                  className={
-                    cartLength >= 99999 || cartLength <= 99999
-                      ? cartLength <= 9999
-                        ? cartLength <= 999
-                          ? cartLength <= 99
-                            ? cartLength <= 9
-                              ? styles.oneDigit
-                              : styles.twoDigits
-                            : styles.threeDigits
-                          : styles.fourDigits
-                        : styles.fiveDigits
-                      : styles.oneDigit
-                  }
-                >
-                  {cartLength >= 99999 ? 99999 : cartLength}
-                </span>
+                <span>{cartLength >= 99999 ? 99999 : cartLength}</span>
               </div>
             </a>
           </div>
