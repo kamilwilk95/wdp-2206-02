@@ -29,7 +29,7 @@ const MenuBar = ({ children }) => (
             </button>
             <div
               className={clsx(
-                'col-auto order-sm-1 navbar-expand-xs collapse',
+                'col-auto order-sm-1 collapse navbar-expand-xs',
                 styles.menu
               )}
               id='mobile-menu'
