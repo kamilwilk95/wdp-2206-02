@@ -14,7 +14,7 @@ const MenuBar = ({ children }) => (
           <ProductSearch />
         </div>
 
-        <nav className='navbar navbar-expand-sm bg-light' id='mobile-menu-wrapper'>
+        <nav className='navbar navbar-expand-sm bg-dark' id='mobile-menu-wrapper'>
           <div className='container-fluid'>
             <button
               className='navbar-toggler'
