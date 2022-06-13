@@ -14,48 +14,45 @@ const MenuBar = ({ children }) => (
           <ProductSearch />
         </div>
 
-        <nav className='navbar navbar-expand-sm bg-light' id='mobile-menu-wrapper'>
+        <nav className='navbar navbar-light bg-light'>
           <div className='container-fluid'>
             <button
               className='navbar-toggler'
               type='button'
-              data-bs-toggle='collapse'
-              data-bs-target='#mobile-menu'
-              aria-controls='mobile-menu'
+              data-mdb-toggle='collapse'
+              data-mdb-target='#navbarToggleExternalContent'
+              aria-controls='navbarToggleExternalContent'
               aria-expanded='false'
               aria-label='Toggle navigation'
             >
-              <span className='navbar-toggler-icon'></span>
+              <i className='fas fa-bars'></i>
             </button>
-            <div
-              className={clsx(
-                'col-auto order-sm-1 collapse navbar-expand-xs',
-                styles.menu
-              )}
-              id='mobile-menu'
-            >
-              <ul className='navbar-nav'>
-                <li className='nav-item'>
+          </div>
+
+          <div className='collapse navbar-expand-xs' id='navbarToggleExternalContent'>
+            <div className={clsx('col-auto order-sm-1', styles.menu)}>
+              <ul>
+                <li>
                   <a href='#' className={styles.active}>
                     Home
                   </a>
                 </li>
-                <li className='nav-item'>
+                <li>
                   <a href='#'>Furniture</a>
                 </li>
-                <li className='nav-item'>
+                <li>
                   <a href='#'>Chair</a>
                 </li>
-                <li className='nav-item'>
+                <li>
                   <a href='#'>Table</a>
                 </li>
                 <li>
                   <a href='#'>Sofa</a>
                 </li>
-                <li className='nav-item'>
+                <li>
                   <a href='#'>Bedroom</a>
                 </li>
-                <li className='nav-item'>
+                <li>
                   <a href='#'>Blog</a>
                 </li>
               </ul>
