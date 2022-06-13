@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  border: 1px solid #b6b6b6;
+  border: 1px solid $feature-border-color;
   text-align: center;
   margin-top: 40px;
 
@@ -12,6 +12,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    @extend %transition-animation;
 
     .icon {
       position: relative;
@@ -20,7 +21,7 @@
 
     &::before {
       content: "";
-      border: 1px solid #b6b6b6;
+      border: 1px solid $feature-border-color;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -28,7 +29,7 @@
       width: 76px;
       height: 76px;
       border-radius: 100%;
-      background-color: #ffffff;
+      background-color: $background-white;
       z-index: -1;
     }
 
@@ -41,7 +42,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      border: 1px solid #b6b6b6;
+      border: 1px solid $feature-border-color;
+      @extend %transition-animation;
     }
   }
 
@@ -51,19 +53,17 @@
     margin-top: -0.5rem;
     letter-spacing: 1px;
     font-weight: 300;
+    @extend %transition-animation;
 
     h5 {
       font-weight: 600;
       margin: 0;
     }
-
-    p {
-    }
   }
 
-  &.active {
+  &.active:hover {
     .iconWrapper {
-      color: #ffffff;
+      color: $background-white;
 
       &::after {
         background-color: $primary;
