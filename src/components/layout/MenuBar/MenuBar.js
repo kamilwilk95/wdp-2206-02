@@ -22,8 +22,8 @@ const MenuBar = ({ children }) => (
               data-bs-toggle='collapse'
               data-bs-target='#mobile-menu'
               aria-controls='mobile-menu'
-              aria-expanded='false'
               aria-label='Toggle navigation'
+              aria-expanded='false'
             >
               <span className='navbar-toggler-icon'></span>
             </button>
