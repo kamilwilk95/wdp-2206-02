@@ -14,7 +14,7 @@ const MenuBar = ({ children }) => (
           <ProductSearch />
         </div>
 
-        <nav className='navbar navbar-light bg-light'>
+        <nav className='navbar navbar-danger bg-primary'>
           <div className='container-fluid'>
             <button
               className='navbar-toggler'
