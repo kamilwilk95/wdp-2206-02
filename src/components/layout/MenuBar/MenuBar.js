@@ -10,7 +10,7 @@ const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row align-items-center'>
-        <div className={'col order-sm-2'}>
+        <div className={'col text-center order-sm-2'}>
           <ProductSearch />
         </div>
 
@@ -29,7 +29,7 @@ const MenuBar = ({ children }) => (
             </button>
             <div
               className={clsx(
-                'col-auto order-sm-1 collapse navbar-expand-xs',
+                'col-auto text-center order-sm-1 collapse navbar-collapse',
                 styles.menu
               )}
               id='mobile-menu'
