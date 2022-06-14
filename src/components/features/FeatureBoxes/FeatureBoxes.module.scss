@@ -5,4 +5,10 @@
   a {
     text-decoration: none;
   }
+
+  @media all and (max-width: 768px) {
+    .box {
+      padding-bottom: 4rem;
+    }
+  }
 }
