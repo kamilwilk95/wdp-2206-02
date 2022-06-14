@@ -11,7 +11,6 @@ import { toggleFavoriteProduct } from '../../../redux/productsRedux';
 import StarsRating from '../../features/StarsRating/StarsRating';
 import { toggleProductCompare } from '../../../redux/productsRedux';
 
-
 const ProductBox = ({
   name,
   price,
@@ -25,7 +24,7 @@ const ProductBox = ({
 }) => {
   const dispatch = useDispatch();
   const productId = id;
-  
+
   const handleClick = e => {
     e.preventDefault();
     dispatch(toggleFavoriteProduct(productId));
@@ -76,8 +75,8 @@ const ProductBox = ({
             </Button>
           </div>
         )}
-        <div className={styles.price}>
-          <Button noHover variant='small'>
+        <div>
+          <Button className={styles.price} noHover variant='small'>
             $ {price}
           </Button>
         </div>
