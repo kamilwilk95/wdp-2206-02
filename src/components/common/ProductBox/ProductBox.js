@@ -25,7 +25,6 @@ const ProductBox = ({
 }) => {
   const dispatch = useDispatch();
   const productId = id;
-
   const handleClick = e => {
     e.preventDefault();
     dispatch(toggleFavoriteProduct(productId));
@@ -86,7 +85,6 @@ const ProductBox = ({
     </div>
   );
 };
-
 ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
