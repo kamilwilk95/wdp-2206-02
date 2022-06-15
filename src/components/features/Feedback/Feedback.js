@@ -10,7 +10,7 @@ const Feedback = () => {
             <div className={'col-auto ' + styles.heading}>
               <h3>Client Feedback</h3>
             </div>
-            <div className={'col'}></div>
+            <div className='col'></div>
             <div className={'col-auto ' + styles.dots}>
               <ul>
                 <li>
@@ -34,7 +34,7 @@ const Feedback = () => {
           />
         </div>
         <div className='row justify-content-center'>
-          <div className={'col-10'}>
+          <div className='col-10'>
             <div className={styles.feedbackContent}>
               Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
               labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
