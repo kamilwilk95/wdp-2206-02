@@ -17,15 +17,15 @@ const Feedback = () => {
                   <a className={styles.active}>page</a>
                 </li>
                 <li>
-                  <a className={''}>page</a>
+                  <a>page</a>
                 </li>
                 <li>
-                  <a className={''}>page</a>
+                  <a>page</a>
                 </li>
               </ul>
             </div>
           </div>
-        </div>{' '}
+        </div>
         <div className='row justify-content-center mb-3'>
           <img
             className={styles.icon}
@@ -45,12 +45,13 @@ const Feedback = () => {
         <div className={styles.feedbackAuthorWrapper}>
           <div className='row justify-content-center'>
             <div className='col-2'>
-              <div className={styles.authorBox}></div>
+              <div className={styles.authorBox}>
+                <img src='/images/portrait.png' alt='apostrophe' />
+              </div>
             </div>
             <div className='col-2'>
               <div className='row'>
-                {' '}
-                <div className={styles.feedbackAuthorText}> John Smith </div>{' '}
+                <div className={styles.feedbackAuthorText}> Amanda Smith </div>{' '}
               </div>
               <div className='row'>
                 <div className={styles.feedbackAuthorTitle}> Furniture Client </div>
