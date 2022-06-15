@@ -1,5 +1,4 @@
 @import "../../../styles/settings.scss";
-
 .root {
   .panelBar {
     margin-bottom: 30px;
@@ -64,4 +63,34 @@
       }
     }
   }
+}
+
+.feedbackContent {
+  font-size: 14px;
+  color: $text-feedback;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.feedbackAuthorWrapper {
+  color: $text-feedback;
+  margin-bottom: 30px;
+}
+
+.authorBox {
+  width: 60px;
+  height: 52px;
+  background-color: $text-price-old;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  float: right;
+}
+
+.feedbackAuthorText {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.feedbackAuthorTitle {
+  font-size: 14px;
 }
