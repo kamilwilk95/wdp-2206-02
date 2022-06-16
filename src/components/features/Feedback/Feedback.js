@@ -26,12 +26,8 @@ const Feedback = () => {
             </div>
           </div>
         </div>
-        <div className='row justify-content-center mb-3'>
-          <img
-            className={styles.icon}
-            src='/images/icons/apostrophe.png'
-            alt='apostrophe'
-          />
+        <div className='row justify-content-center'>
+          <span className={'font-secular ' + styles.apostrophe}> &apos;&apos;</span>
         </div>
         <div className='row justify-content-center'>
           <div className='col-10'>
