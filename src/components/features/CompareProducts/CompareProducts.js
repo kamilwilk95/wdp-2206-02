@@ -5,7 +5,7 @@ import getCompare from '../../../redux/productsRedux';
 import styles from './CompareProducts.module.scss';
 
 const CompareProducts = () => {
-  const compare = useSelector(getCompare);
+  const compare = useSelector(state => getCompare(state));
 
   console.log('compare', compare);
 
