@@ -19,7 +19,7 @@ const initialState = {
       image: './images/fornitures-bed-1.jpg',
       newFurniture: true,
       isFavorite: true,
-      compare: true,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -43,7 +43,7 @@ const initialState = {
       image: './images/fornitures-bed-3.jpg',
       newFurniture: true,
       isFavorite: false,
-      compare: true,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-4',
