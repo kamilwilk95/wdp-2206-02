@@ -27,6 +27,24 @@ const Feedback = () => {
     );
   }
 
+  //placeholder for Swipe functionality
+  /* const rightAction = () => {
+    setActivePage(activePage - 1);
+
+    if (activePage <= 0) {
+      setActivePage(activePage);
+    }
+  };
+
+  const leftAction = () => {
+    setActivePage(activePage + 1);
+
+    if (activePage >= pagesCount - 1) {
+      setActivePage(activePage);
+    }
+  };
+  */
+
   return (
     <div className={styles.root}>
       <div className='container'>
