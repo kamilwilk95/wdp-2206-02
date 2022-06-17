@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Feedback.module.scss';
+import { getAllFeedback, getFeedbackCount } from '../../../redux/feedbackRedux';
+import { useSelector } from 'react-redux';
 
 const Feedback = () => {
+  const [activePage, setActivePage] = useState(0);
+
+  const feedbackData = useSelector(getAllFeedback);
+  const pagesCount = useSelector(getFeedbackCount);
+
+  const handlePageChange = newPage => {
+    setActivePage(newPage);
+  };
+
+  const dots = [];
+  for (let i = 0; i < pagesCount; i++) {
+    dots.push(
+      <li key={i}>
+        <a
+          onClick={() => handlePageChange(i)}
+          className={i === activePage ? styles.active : ''}
+        >
+          page {i}
+        </a>
+      </li>
+    );
+  }
+
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -12,49 +37,39 @@ const Feedback = () => {
             </div>
             <div className='col'></div>
             <div className={'col-auto ' + styles.dots}>
-              <ul>
-                <li>
-                  <a className={styles.active}>page</a>
-                </li>
-                <li>
-                  <a>page</a>
-                </li>
-                <li>
-                  <a>page</a>
-                </li>
-              </ul>
+              <ul>{dots}</ul>
             </div>
           </div>
         </div>
         <div className='row justify-content-center'>
           <span className={'font-secular ' + styles.apostrophe}> &apos;&apos;</span>
         </div>
-        <div className='row justify-content-center'>
-          <div className='col-10'>
-            <div className={styles.feedbackContent}>
-              Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-              accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.
+        {feedbackData.slice(activePage, activePage + 1).map(item => (
+          <div key={item.id}>
+            <div className='row justify-content-center'>
+              <div className='col-10'>
+                <div className={styles.feedbackContent}>{item.content}</div>
+              </div>
+            </div>
+            <div className={styles.feedbackAuthorWrapper}>
+              <div className='row justify-content-center'>
+                <div className='col-2'>
+                  <div className={styles.authorBox}>
+                    <img src={item.photo} alt='apostrophe' />
+                  </div>
+                </div>
+                <div className='col-2'>
+                  <div className='row'>
+                    <div className={styles.feedbackAuthorText}> {item.author} </div>
+                  </div>
+                  <div className='row'>
+                    <div className={styles.feedbackAuthorTitle}>{item.authorTitle}</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.feedbackAuthorWrapper}>
-          <div className='row justify-content-center'>
-            <div className='col-2'>
-              <div className={styles.authorBox}>
-                <img src='/images/portrait.png' alt='apostrophe' />
-              </div>
-            </div>
-            <div className='col-2'>
-              <div className='row'>
-                <div className={styles.feedbackAuthorText}> Amanda Smith </div>{' '}
-              </div>
-              <div className='row'>
-                <div className={styles.feedbackAuthorTitle}> Furniture Client </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

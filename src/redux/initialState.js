@@ -294,6 +294,48 @@ const initialState = {
   cart: {
     products: [],
   },
+  feedback: [
+    {
+      id: 1,
+      author: 'Amanda Smith',
+      authorTitle: 'Furniture Client',
+      content:
+        'Lorem ipsum dolor sit amet, etiam luptatum id vel, diam ornatus moderatius cu usu. Ad eos suas eripuit, vis ea.',
+      photo: '/images/feedback/portrait1.png',
+    },
+    {
+      id: 2,
+      author: 'John Smith',
+      authorTitle: 'Designer',
+      content:
+        'Lorem ipsum dolor sit amet, eam id aliquip eleifend. Nec no dico illud augue, ex nam fugit mandamus, no ullum laboramus vel? Et erroribus instructior.',
+      photo: '/images/feedback/portrait2.png',
+    },
+    {
+      id: 3,
+      author: 'Tora Leaves',
+      authorTitle: 'Immortal Actress',
+      content:
+        'Lorem ipsum dolor sit amet, pri ne prima theophrastus, iudico percipitur ne eam! Wisi putant in ius, etiam.',
+      photo: '/images/feedback/portrait3.png',
+    },
+    {
+      id: 4,
+      author: 'Kari Karnes',
+      authorTitle: 'Salesman',
+      content:
+        'Lorem ipsum dolor sit amet, eos tantas propriae at, erant delectus perpetua duo eu, enim idque voluptatum mea ea. Sit ei.',
+      photo: '/images/feedback/portrait4.png',
+    },
+    {
+      id: 5,
+      author: 'Jean Claude',
+      authorTitle: 'Partner',
+      content:
+        'Lorem ipsum dolor sit amet, habeo decore id vix. Te nam tollit nominati concludaturque. Usu principes reformidans eu. In pro inermis aliquando. Aperiri laoreet oporteat an mei, mel.',
+      photo: '/images/feedback/portrait5.png',
+    },
+  ],
   settings: {
     mediaQuery: 'desktop',
   },
