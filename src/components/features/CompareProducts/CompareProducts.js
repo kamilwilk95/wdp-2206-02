@@ -8,19 +8,23 @@ const CompareProducts = () => {
   const compare = useSelector(state => getCompare(state));
 
   return (
-    <div className={styles.root}>
-      <div className='row align-items-end justify-content-end'>
-        {compare.map(product => (
-          <div key={product.id} className={'col-2' + ' ' + styles.photo}>
+    <div
+      className={'row align-items-end justify-content-center' + ' ' + styles.wrapper}
+    >
+      {compare.map(product => (
+        <div className={styles.box} key={product.id}>
+          <div className={'col-3' + ' ' + styles.photo}>
             <img
               src={product.image}
               alt={product.category + ' ' + product.name}
               className={styles.image}
             ></img>
           </div>
-        ))}
-      </div>
-      <p>compare</p>
+          <div className={styles.content}>
+            <h5>{product.name}</h5>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
