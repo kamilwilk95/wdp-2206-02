@@ -3,18 +3,18 @@
 .wrapper {
   position: fixed;
   bottom: 0;
-  margin-bottom: 2rem;
   z-index: 999;
   width: 100%;
-
+  margin-bottom: 1rem;
   .box {
     background-color: $background-white;
     border: 1px solid $product-box-border-color;
-    margin: 0 20px;
+    margin: 0 10px;
+    padding: 0;
 
     .content {
       text-align: center;
-      padding: 20px 0;
+      padding: 10px;
 
       h5 {
         color: $primary;
@@ -28,17 +28,37 @@
       height: 100%;
       width: 100%;
       position: relative;
-      padding: 80% 90px 0 90px;
 
       .image {
-        position: absolute;
+        // position: absolute;
         object-fit: cover;
-
-        top: 0;
-        left: 0;
-        height: 100%;
+        // top: 0;
+        // left: 0;
+        height: 120px;
         width: 100%;
       }
     }
+
+    .button_close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 999;
+      display: none;
+    }
+
+    &:hover {
+      .button_close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 999;
+        display: block;
+      }
+    }
+  }
+
+  .button_compare {
+    display: none;
   }
 }
