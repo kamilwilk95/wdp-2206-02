@@ -1,11 +1,12 @@
 @import "../../../styles/settings.scss";
 
 .wrapper {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   z-index: 999;
   width: 100%;
   margin-bottom: 1rem;
+
   .box {
     background-color: $background-white;
     border: 1px solid $product-box-border-color;
@@ -30,10 +31,7 @@
       position: relative;
 
       .image {
-        // position: absolute;
         object-fit: cover;
-        // top: 0;
-        // left: 0;
         height: 120px;
         width: 100%;
       }
