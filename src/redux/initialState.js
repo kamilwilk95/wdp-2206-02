@@ -291,6 +291,48 @@ const initialState = {
       compare: false,
     },
   ],
+  hotDeals: [
+    {
+      id: 'aenean-ru-bristique-25',
+      name: 'Aenean Ru Bristique 25',
+      category: 'bed',
+      image: './images/furniture-bed-26.jpg',
+
+      price: 300,
+      priceOld: 350,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: false,
+      isFavorite: false,
+      compare: false,
+    },
+    {
+      id: 'aenean-ru-bristique-26',
+      name: 'Aenean Ru Bristique 26',
+      category: 'bed',
+      image: './images/furniture-bed-26.jpg',
+
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: false,
+      isFavorite: false,
+      compare: false,
+    },
+    {
+      id: 'aenean-ru-bristique-27',
+      name: 'Aenean Ru Bristique 27',
+      category: 'bed',
+      image: './images/furnitures-bed-27.jpg',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: false,
+      isFavorite: false,
+      compare: false,
+    },
+  ],
+
   cart: {
     products: [],
   },

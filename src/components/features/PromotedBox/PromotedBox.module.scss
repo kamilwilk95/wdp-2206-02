@@ -53,13 +53,56 @@
     z-index: 1;
     transform: translate(-50%, -50%);
     visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+  }
 
-    :hover {
-      visibility: visible;
+  .timerWrapper {
+    position: absolute;
+    display: inline-flex;
+    justify-content: space-evenly;
+    z-index: 15;
+    bottom: 10px;
+    width: 100%;
+    padding: 0 15px 0 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+
+
+  }
+
+  .timerText {
+    background-color: $header-bg;
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+    color: $background-white;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    font-weight: 600;
+    .textBig {
+      font-size: 25px;
+    }
+
+    .textSmall {
+      font-size: 12px;
     }
   }
 }
 
+.photoBox:hover {
+  .buttons{
+    visibility: visible;
+    opacity: 1;
+
+  }
+  .timerWrapper {
+    visibility: visible;
+    opacity: 1;
+  }
+}
 
 .content {
   text-align: center;
@@ -125,39 +168,10 @@
   vertical-align: center;
 }
 
-.timerWrapper {
-  position: absolute;
-  display: inline-flex;
-  justify-content: space-evenly;
-  z-index: 15;
-  bottom: 10px;
-  width: 100%;
-  padding: 0 15px 0 15px;
-
-}
-
-.timerText {
-  background-color: $header-bg;
-  border-radius: 50px;
-  width: 70px;
-  height: 70px;
-  color: $background-white;
-  text-align: center;
-  justify-content: center;
-  padding: 5px;
-  font-weight: 600;
-  .textBig {
-    font-size: 25px;
-  }
-
-  .textSmall {
-    font-size: 12px;
-  }
-}
-
 .promoWrapper {
   position: relative;
-  background-color: #2a2a2a;
+  border: 1px solid $product-box-border-color;
+
   height: 100%;
   .imagePromo {
     height: 100%;
@@ -168,13 +182,78 @@
 }
 
 .banner {
+  display: block;
   content: "";
+  color: $background-white;
   position: absolute;
-  top: 50%; left: 50%;
+  top: 45%; left: 50%;
   transform: translate(-50%,-50%);
   z-index: 2;
   height: 250px;
   width: 100%;
   background-color: $header-topbar-bg;
   opacity: 0.9;
+
+  .titleWrapper {
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+    justify-content: center;
+    :first-child {
+      font-weight: 300;
+      font-size: 50px;
+      text-align: center;
+      vertical-align: center;
+      margin-right: 10px;
+    }
+    :last-child {
+      font-weight: bold;
+        font-size: 50px;
+        text-align: center;
+        vertical-align: center;
+        margin-right: 10px;
+      }
+    }
+  .bannerSubTitle {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 22px;
+    margin-top: -15px;
+  }
+}
+
+.shopNow {
+  display: flex;
+  width: 136px;
+  height: 54px;
+  border-radius: 5px;
+  position: absolute;
+  background-color: $background-white;
+  left: 50%;
+  bottom: 20%;
+  transform: translate(-50%,-50%);
+  z-index: 5;
+  color: $color-black;
+  font-weight: bold;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.promoNavigationWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 49px;
+  display: flex;
+  width: 100%;
+
+  .arrow {
+    font-size: 30px;
+    padding-top: 10px;
+    text-align: center;
+    display:inline-block;
+    width:50%;
+  }
 }

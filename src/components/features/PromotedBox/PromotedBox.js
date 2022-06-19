@@ -4,6 +4,8 @@ import styles from './PromotedBox.module.scss';
 import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+  faAngleLeft,
+  faAngleRight,
   faExchangeAlt,
   faEye,
   faShoppingBasket,
@@ -104,7 +106,26 @@ const PromotedBox = () => {
                 src='/images/promotions/garden-furnitures.jpg'
                 alt='garden-furniture'
               />
-              <div className={styles.banner}></div>
+              <div className={styles.banner}>
+                <div className={styles.titleWrapper}>
+                  <div>INDOOR</div>
+                  <div>FURNITURE</div>
+                </div>
+                <div className={styles.bannerSubTitle}>
+                  SAVE UP TO 50% OF ALL FURNITURE
+                </div>
+              </div>
+              <Button className={styles.shopNow} variant='small'>
+                SHOP NOW
+              </Button>
+              <div className={styles.promoNavigationWrapper}>
+                <Button className={styles.arrow} variant='small'>
+                  <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
+                </Button>
+                <Button className={styles.arrow} variant='small'>
+                  <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
