@@ -34,17 +34,35 @@ const PromotedBox = () => {
                   </ul>
                 </div>
               </div>
-              <div className={styles.photo}>
+              <div className={styles.photoBox}>
                 <img
                   className={styles.images}
                   src='/images/fornitures-bed-3.jpg'
                   alt='forniture'
                 />
                 <div className={styles.buttons}>
-                  <Button variant='small'>
+                  <Button variant='small' className='pt-2 pb-2'>
                     <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO
                     CART
                   </Button>
+                </div>
+                <div className={styles.timerWrapper}>
+                  <div className={styles.timerText}>
+                    <div className={styles.textBig}>25</div>
+                    <div className={styles.textSmall}>DAYS</div>
+                  </div>
+                  <div className={styles.timerText}>
+                    <div className={styles.textBig}>11</div>
+                    <div className={styles.textSmall}>HRS</div>
+                  </div>
+                  <div className={styles.timerText}>
+                    <div className={styles.textBig}>45</div>
+                    <div className={styles.textSmall}>MINS</div>
+                  </div>
+                  <div className={styles.timerText}>
+                    <div className={styles.textBig}>25</div>
+                    <div className={styles.textSmall}>SECS</div>
+                  </div>
                 </div>
               </div>
               <div className={styles.content}>
@@ -54,10 +72,10 @@ const PromotedBox = () => {
               <div className={styles.line}></div>
               <div className={styles.actions}>
                 <div className={styles.outlines}>
-                  <Button variant='outline'>
+                  <Button className='mr-1' variant='outline'>
                     <FontAwesomeIcon icon={faEye}>Show</FontAwesomeIcon>
                   </Button>
-                  <Button variant='outline'>
+                  <Button className='mr-1' variant='outline'>
                     <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
                   </Button>
                   <Button variant='outline'>

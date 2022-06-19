@@ -30,9 +30,9 @@
   }
 }
 
-.photo {
+.photoBox {
   position: relative;
-  height: 350px;
+  height: 300px;
   width: 100% ;
 
   .images {
@@ -54,6 +54,7 @@
     transform: translate(-50%, -50%);
   }
 }
+
 
 .content {
   text-align: center;
@@ -117,4 +118,34 @@
   font-size: 20px;
   font-weight: 600;
   vertical-align: center;
+}
+
+.timerWrapper {
+  position: absolute;
+  display: inline-flex;
+  justify-content: space-evenly;
+  z-index: 15;
+  bottom: 10px;
+  width: 100%;
+  padding: 0 15px 0 15px;
+
+}
+
+.timerText {
+  background-color: $header-bg;
+  border-radius: 50px;
+  width: 70px;
+  height: 70px;
+  color: $background-white;
+  text-align: center;
+  justify-content: center;
+  padding: 5px;
+  font-weight: 600;
+  .textBig {
+    font-size: 25px;
+  }
+
+  .textSmall {
+    font-size: 12px;
+  }
 }
