@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
-import CompareProducts from '../../features/CompareProducts/CompareProducts';
 import Swipe from '../../common/Swipe/Swipe';
 
 class NewFurniture extends React.Component {
@@ -95,7 +94,6 @@ class NewFurniture extends React.Component {
                 ))}
             </div>
           </div>
-          <CompareProducts />
         </div>
       </Swipe>
     );
