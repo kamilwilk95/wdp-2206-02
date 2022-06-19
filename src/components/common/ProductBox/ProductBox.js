@@ -14,6 +14,7 @@ import { toggleProductCompare } from '../../../redux/productsRedux';
 const ProductBox = ({
   name,
   price,
+  image,
   promo,
   stars,
   isFavorite,
@@ -38,6 +39,7 @@ const ProductBox = ({
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
+        <img className={styles.images} src={image} alt='forniture' />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
@@ -89,6 +91,7 @@ ProductBox.propTypes = {
   name: PropTypes.string,
   price: PropTypes.number,
   priceOld: PropTypes.number,
+  image: PropTypes.string,
   promo: PropTypes.string,
   stars: PropTypes.number,
   isFavorite: PropTypes.bool,
