@@ -1,0 +1,120 @@
+@import "../../../styles/settings.scss";
+
+.dots {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 1rem;
+    list-style: none;
+    li {
+      display: inline-block;
+      margin-left: 0.5rem;
+      a {
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-radius: 6px;
+        background-color: $product-box-border-color;
+        font-size: 0;
+        @extend %transition-animation;
+
+        &.active,
+        &:hover {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.photo {
+  position: relative;
+  height: 350px;
+  width: 100% ;
+
+  .images {
+    position: absolute;
+    object-fit: cover;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+
+  h5 {
+    color: $color-black;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+}
+
+.line {
+  margin: 0 10px;
+  border-bottom: 1px solid $footer-claim-bg;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    width: 30px;
+    border-bottom: 4px solid $primary;
+    transform: translateX(-50%);
+  }
+}
+
+.actions {
+  padding: 15px 10px 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priceold {
+  color: $text-price-old;
+  font-size: 16px;
+  text-decoration: line-through;
+  background: none;
+  padding-left: $base-padding * 2;
+}
+
+.productBox {
+  background-color: $background-white;
+  border: 1px solid $product-box-border-color;
+  width: 350px;
+
+}
+
+.topBar {
+  display: flex;
+  background-color: $header-bg;
+  height: 50px;
+  align-items: center;
+}
+
+.title {
+  color: $background-white;
+  font-size: 20px;
+  font-weight: 600;
+  vertical-align: center;
+}
