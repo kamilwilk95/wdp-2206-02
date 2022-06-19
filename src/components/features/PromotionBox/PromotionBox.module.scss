@@ -1,0 +1,21 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  margin-bottom: 30px;
+  position: relative;
+
+  .container {
+    max-width: 1140px;
+  }
+
+  .row {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .box-left {
+    flex: 40%;
+  }
+}
