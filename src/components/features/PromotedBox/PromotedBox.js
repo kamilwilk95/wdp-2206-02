@@ -15,7 +15,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 const PromotedBox = () => {
   //console.log('test')
   return (
-    <div className={styles.root}>
+    <div>
       <div className='container'>
         <div className='row'>
           <div className='col-md-4'>
