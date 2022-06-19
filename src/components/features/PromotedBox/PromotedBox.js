@@ -97,6 +97,16 @@ const PromotedBox = () => {
               </div>
             </div>
           </div>
+          <div className='col-md-8'>
+            <div className={styles.promoWrapper}>
+              <img
+                className={styles.imagePromo}
+                src='/images/promotions/garden-furnitures.jpg'
+                alt='garden-furniture'
+              />
+              <div className={styles.banner}></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
