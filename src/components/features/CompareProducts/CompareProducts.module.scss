@@ -1,14 +1,15 @@
 @import "../../../styles/settings.scss";
 
 .wrapper {
-  position: fixed;
+  position: sticky;
   bottom: 0;
-  z-index: 999;
+  background-color: $compare-bg;
   width: 100%;
-  margin-bottom: 1rem;
-
+  margin: 0;
+  z-index: 999;
+  padding: 10px;
   .box {
-    background-color: $compare-bg;
+    background-color: $background-white;
     border: 1px solid $product-box-border-color;
     margin: 0 10px;
     padding: 0;

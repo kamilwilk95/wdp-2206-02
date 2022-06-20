@@ -30,11 +30,11 @@ const ProductBox = ({
     dispatch(toggleFavoriteProduct(productId));
   };
 
-  const allCompare = useSelector(state => getCompare(state));
+  const getCompareProducts = useSelector(state => getCompare(state));
 
   const handleCompare = e => {
     e.preventDefault();
-    if (allCompare.length < 4) {
+    if (getCompareProducts.length < 4) {
       dispatch(toggleProductCompare(productId));
     }
   };

@@ -16,6 +16,8 @@ const CompareProducts = () => {
     dispatch(toggleProductCompare(id));
   };
 
+  if (compare.length === 0) return <></>;
+
   return (
     <div className={'row align-items-end justify-content-center ' + styles.wrapper}>
       {compare.map(product => (
@@ -41,7 +43,7 @@ const CompareProducts = () => {
       ))}
       <div className='col-12 col-lg-1 text-center mb-2 mt-3 '>
         <Button
-          variant='main'
+          variant='main-orange'
           className={compare.length === 0 ? styles.button_compare : ''}
         >
           Compare
