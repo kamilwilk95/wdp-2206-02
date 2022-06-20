@@ -6,7 +6,7 @@
     position: relative;
 
     :global(.row) > * {
-      border-bottom: 4px solid #e2e2e2;
+      border-bottom: 4px solid $new-furniture-border-color;
     }
 
     .heading {
@@ -33,6 +33,7 @@
 
     .menu {
       text-align: center;
+
       ul {
         margin: 0;
         padding: 0;
@@ -43,7 +44,7 @@
           font-weight: 600;
 
           a {
-            color: rgb(42, 42, 42);
+            color: $stars-average;
             position: relative;
             text-decoration: none;
             font-size: 18px;
@@ -74,7 +75,7 @@
         margin: 0;
         padding: 0 0 0 1rem;
         list-style: none;
-        background-color: #ffffff;
+        background-color: $background-white;
         transform: translateY(15px);
 
         li {
@@ -86,8 +87,9 @@
             width: 13px;
             height: 13px;
             border-radius: 6px;
-            background-color: #e1e1e1;
+            background-color: $product-box-border-color;
             font-size: 0;
+            @extend %transition-animation;
 
             &.active,
             &:hover {
@@ -97,5 +99,14 @@
         }
       }
     }
+  }
+  .fadeIn {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+  }
+
+  .fadeOut {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
   }
 }

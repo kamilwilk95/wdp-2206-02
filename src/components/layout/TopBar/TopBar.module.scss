@@ -13,8 +13,9 @@
       line-height: 55px;
 
       a {
-        color: #ffffff;
+        color: $background-white;
         font-size: 13px;
+        @extend %transition-animation;
 
         &:hover {
           color: $primary;
@@ -37,6 +38,12 @@
 
     .icon {
       margin-right: 5px;
+    }
+
+    @media all and (max-width: 768px) {
+      span {
+        font-size: 0;
+      }
     }
   }
 }
