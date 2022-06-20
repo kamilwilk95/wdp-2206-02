@@ -50,3 +50,11 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .root {
+    .row {
+      display: block;
+    }
+  }
+}
