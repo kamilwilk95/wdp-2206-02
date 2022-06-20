@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './PromotionBox.module.scss';
+import styles from './Sale.module.scss';
 
-const PromotionBox = promotion_img => {
+const SaleBox = sale_img => {
   return (
     <div>
       <div className='container'>
@@ -40,8 +40,8 @@ const PromotionBox = promotion_img => {
   );
 };
 
-PromotionBox.propTypes = {
+SaleBox.propTypes = {
   promotion_img: PropTypes.string,
 };
 
-export default PromotionBox;
+export default SaleBox;
