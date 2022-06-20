@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Sale.module.scss';
+import styles from './SaleBox.module.scss';
 
 const SaleBox = sale_img => {
   return (
