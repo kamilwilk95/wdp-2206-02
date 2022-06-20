@@ -13,7 +13,6 @@ import {
 import StarsRating from '../StarsRating/StarsRating';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 const PromotedBox = () => {
-  //console.log('test')
   return (
     <div>
       <div className='container'>
