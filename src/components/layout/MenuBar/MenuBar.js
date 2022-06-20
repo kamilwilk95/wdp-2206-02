@@ -12,20 +12,19 @@ const MenuBar = ({ children }) => (
         <div className={'col order-md-1 order-sm-2'}>
           <ProductSearch />
         </div>
-        <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-          <button
-            className='navbar-toggler'
-            type='button'
-            data-toggle='collapse'
-            data-target='#navbarNav'
-            aria-controls='navbarNav'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-          >
-            <span className='navbar-toggler-icon'></span>
-          </button>
-
-          <div className={'col-auto order-md-2 order-sm-1 ' + styles.menu}>
+        <div className={'col-auto order-md-2 order-sm-1 ' + styles.menu}>
+          <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+            <button
+              className='navbar-toggler'
+              type='button'
+              data-toggle='collapse'
+              data-target='#navbarNav'
+              aria-controls='navbarNav'
+              aria-expanded='false'
+              aria-label='Toggle navigation'
+            >
+              <span className='navbar-toggler-icon'></span>
+            </button>
             <div className='collapse navbar-collapse' id='navbarNav'>
               <ul className='navbar-nav'>
                 <li className='nav-item'>
@@ -65,8 +64,8 @@ const MenuBar = ({ children }) => (
                 </li>
               </ul>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     </div>
   </div>
