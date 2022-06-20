@@ -1,5 +1,4 @@
 import React from 'react';
-//import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
@@ -40,7 +39,7 @@ const ProductBox = ({
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-        <img className={styles.images} src={image} alt='Photo of products' />
+        <img className={styles.images} src={image} alt='forniture' />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
@@ -78,8 +77,8 @@ const ProductBox = ({
             </Button>
           </div>
         )}
-        <div className={styles.price}>
-          <Button noHover variant='small'>
+        <div>
+          <Button className={styles.price} noHover variant='small'>
             $ {price}
           </Button>
         </div>

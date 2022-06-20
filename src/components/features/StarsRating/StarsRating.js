@@ -25,8 +25,12 @@ const StarsRating = ({ id, ownStars, stars }) => {
           <FontAwesomeIcon
             icon={star <= (hover || ownStars || stars) ? faStar : farStar}
             onMouseEnter={() => setHover(star)}
-            onMouseLeave={() => setHover(!ownStars ? stars : ownStars)}
-            className={ownStars || hover ? styles.ownStars : styles.stars}
+            onMouseLeave={() => setHover(0)}
+            className={
+              ownStars || hover === star || (hover && stars)
+                ? styles.ownStars
+                : styles.stars
+            }
           ></FontAwesomeIcon>
         </Button>
       ))}
