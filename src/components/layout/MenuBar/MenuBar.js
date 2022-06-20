@@ -12,52 +12,61 @@ const MenuBar = ({ children }) => (
         <div className={'col order-md-1 order-sm-2'}>
           <ProductSearch />
         </div>
-        <div className={'col-auto order-md-2 order-sm-1 ' + styles.menu}>
-          <ul>
-            <li>
-              <a href='#' className={styles.active}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href='#'>Furniture</a>
-            </li>
-            <li>
-              <a href='#'>Chair</a>
-            </li>
-            <li>
-              <a href='#'>Table</a>
-            </li>
-            <li>
-              <a href='#'>Sofa</a>
-            </li>
-            <li>
-              <a href='#'>Bedroom</a>
-            </li>
-            <li>
-              <a href='#'>Blog</a>
-            </li>
-          </ul>
-        </div>
+        <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+          <button
+            className='navbar-toggler'
+            type='button'
+            data-toggle='collapse'
+            data-target='#navbarNav'
+            aria-controls='navbarNav'
+            aria-expanded='false'
+            aria-label='Toggle navigation'
+          >
+            <span className='navbar-toggler-icon'></span>
+          </button>
 
-        {/* <div>
-          <nav className='navbar navbar-primary bg-primary'>
-            <div className='container-fluid'>
-              <button
-                className='navbar-toggler'
-                type='button'
-                data-mdb-toggle='collapse'
-                data-mdb-target='#navbarToggleExternalContent'
-                aria-controls='navbarToggleExternalContent'
-                aria-expanded='false'
-                aria-label='Toggle navigation'
-              >
-                <i className='fas fa-bars'></i>
-              </button>
+          <div className={'col-auto order-md-2 order-sm-1 ' + styles.menu}>
+            <div className='collapse navbar-collapse' id='navbarNav'>
+              <ul className='navbar-nav'>
+                <li className='nav-item'>
+                  <a href='#' className={'nav-link' + styles.active}>
+                    Home
+                  </a>
+                </li>
+                <li className='nav-item active'>
+                  <a className='nav-link' href='#'>
+                    Furniture
+                  </a>
+                </li>
+                <li className='nav-item active'>
+                  <a className='nav-link' href='#'>
+                    Chair
+                  </a>
+                </li>
+                <li className='nav-item active'>
+                  <a className='nav-link' href='#'>
+                    Table
+                  </a>
+                </li>
+                <li className='nav-item active'>
+                  <a className='nav-link' href='#'>
+                    Sofa
+                  </a>
+                </li>
+                <li className='nav-item active'>
+                  <a className='nav-link' href='#'>
+                    Bedroom
+                  </a>
+                </li>
+                <li className='nav-item active'>
+                  <a className='nav-link' href='#'>
+                    Blog
+                  </a>
+                </li>
+              </ul>
             </div>
-          </nav>
-          <div className='collapse' id='navbarToggleExternalContent'></div>
-        </div> */}
+          </div>
+        </nav>
       </div>
     </div>
   </div>
