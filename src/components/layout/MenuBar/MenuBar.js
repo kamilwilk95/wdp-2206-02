@@ -9,11 +9,11 @@ const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row align-items-center'>
-        <div className={'col order-md-1 order-sm-2'}>
+        <div className={'col '}>
           <ProductSearch />
         </div>
-        <div className={'col-auto order-md-2 order-sm-1 ' + styles.menu}>
-          <nav className='navbar navbar-expand-xl navbar-light bg-none'>
+        <div className={'col-auto ' + styles.menu}>
+          <nav className='navbar navbar-expand-md navbar-light bg-none'>
             <div className='container-fluid'>
               <button
                 className='navbar-toggler'
@@ -29,12 +29,7 @@ const MenuBar = ({ children }) => (
               <div className='collapse navbar-collapse navbar-mobile' id='navbarNav'>
                 <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                   <li className='nav-item'>
-                    <a
-                      className='nav-link active'
-                      aria-current='page'
-                      href='#'
-                      className={'nav-link' + styles.active}
-                    >
+                    <a className='nav-link active' aria-current='page' href='#'>
                       Home
                     </a>
                   </li>
