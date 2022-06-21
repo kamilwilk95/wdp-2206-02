@@ -24,6 +24,7 @@
 
     .images {
       position: absolute;
+      object-fit: cover;
       padding: 0;
       top: 0;
       left: 0;
@@ -59,7 +60,6 @@
       opacity: 100;
       transition: 1s;
     }
-
   }
 
   .content {
