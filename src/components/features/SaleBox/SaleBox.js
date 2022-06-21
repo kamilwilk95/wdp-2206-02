@@ -18,14 +18,14 @@ const SaleBox = sale_img => {
             <p className={styles.text_price}>-20%</p>
           </div>
           <div className={styles.rightinner}>
-            <div className={styles.top_product}>
+            <div>
               <img src='./images/promotion-bed.jpg' alt='promotion' />
               <p className={styles.topSale_text}>
                 <strong>OFFICE</strong> CHAIR<span> COLLECTION</span>
               </p>
               <p className={styles.topSale_text_price}>$200.00</p>
             </div>
-            <div className={styles.bottom_product}>
+            <div>
               <img src='./images/promotion-bed.jpg' alt='promotion' />
               <p className={styles.bottomSale_text}>
                 <strong>SPECIAL</strong> COLLECTION
