@@ -29,7 +29,6 @@ const initialState = {
       image: './images/fornitures-bed-2.jpg',
       stars: 2,
       promo: 'sale',
-      image: './images/beds/fornitures-bed-2.jpg',
       newFurniture: true,
       isFavorite: true,
       compare: false,
