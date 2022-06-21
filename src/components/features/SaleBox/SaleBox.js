@@ -12,7 +12,6 @@ const SaleBox = sale_img => {
             <div className={styles.box_img}>
               <img src='./images/promotion-bed.jpg' alt='promotion-left' />
             </div>
-
             <p className={styles.promo_text}>
               GUEST ROOM<span> SOFA</span>
             </p>
@@ -24,13 +23,13 @@ const SaleBox = sale_img => {
               <p className={styles.topSale_text}>
                 <strong>OFFICE</strong> CHAIR<span> COLLECTION</span>
               </p>
-              <p className={styles.topSale_text_price}>-$200.00</p>
+              <p className={styles.topSale_text_price}>$200.00</p>
             </div>
             <div className={styles.bottom_product}>
               <img src='./images/promotion-bed.jpg' alt='promotion' />
               <p className={styles.bottomSale_text}>
                 <strong>SPECIAL</strong> COLLECTION
-                <span> SAVE UP 45% OF FORNITURE</span>
+                <span> SAVE UP 45% OF FURNITURE</span>
               </p>
             </div>
           </div>
