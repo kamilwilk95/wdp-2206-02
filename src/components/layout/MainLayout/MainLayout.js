@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import CompareProducts from '../../features/CompareProducts/CompareProducts';
 import { useEffect } from 'react';
 import { getMediaQuery, getScreenSize } from '../../../redux/settingsReducer';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { DESKTOP, TABLET, MOBILE } from '../../../settings/settings';
+
 const MainLayout = ({ children }) => {
   const dispatch = useDispatch();
 
@@ -40,6 +42,7 @@ const MainLayout = ({ children }) => {
       <Header />
       {children}
       <Footer />
+      <CompareProducts />
     </div>
   );
 };
