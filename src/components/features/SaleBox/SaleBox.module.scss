@@ -51,15 +51,47 @@
     }
   }
   .rightinner {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 50%;
     height: 405px;
     padding-left: 30px;
+
     img {
       width: 100%;
       height: 100%;
       padding-bottom: 20px;
+    }
+
+    .overlay_top {
+      height: 100%;
+    }
+
+    .overlay_top::before {
+      position: absolute;
+      content: "";
+      opacity: 0.4;
+      background-color: $color-black;
+      width: 94.5%;
+      height: 35%;
+      top: 0px;
+      left: 30px;
+    }
+
+    .overlay_bottom {
+      height: 100%;
+    }
+
+    .overlay_bottom::before {
+      position: absolute;
+      content: "";
+      opacity: 0.4;
+      background-color: $color-black;
+      width: 94.5%;
+      height: 35%;
+      top: 40%;
+      left: 30px;
     }
   }
   .rightinner > div {
@@ -75,10 +107,11 @@
 
   .topSale_text {
     top: 10%;
-    left: 70%;
+    left: 40%;
     font-size: 20px;
     padding-right: 150px;
     line-height: 1;
+    color: $text-color-white;
     span {
       font-size: 14px;
     }
@@ -86,21 +119,21 @@
 
   .topSale_text_price {
     top: 23%;
-    left: 70%;
+    left: 40%;
     font-size: 20px;
-    color: $primary;
+    color: $text-price-sale;
   }
 
   .bottomSale_text {
     font-size: 18px;
     top: 50%;
-    left: 80%;
-    color: $primary;
+    left: 60%;
+    color: $text-price-sale;
 
     span {
       font-size: 14px;
       left: 100%;
-      color: $text-color;
+      color: $text-color-white;
     }
   }
 }
