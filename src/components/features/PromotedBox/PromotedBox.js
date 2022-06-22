@@ -234,16 +234,11 @@ const PromotedBox = () => {
           </div>
           <div className='col-md-8'>
             {promoData.slice(activePagePromo, activePagePromo + 1).map(item => (
-              <div
-                key={item.id}
-                className={activateFade === 'right' ? styles.fadeIn : styles.fadeOut}
-              >
-                <div className={styles.promoWrapper}>
-                  <img
-                    className={styles.imagePromo}
-                    src={item.image}
-                    alt={item.imageAlt}
-                  />
+              <div key={item.id} className={styles.promoWrapper}>
+                <div
+                  className={activateFade === 'right' ? styles.fadeIn : styles.fadeOut}
+                >
+                  <img src={item.image} alt={item.imageAlt} />
                   <div className={styles.banner}>
                     <div className={styles.titleWrapper}>
                       <div>{item.titleFirst}</div>
@@ -254,22 +249,23 @@ const PromotedBox = () => {
                   <Button className={styles.shopNow} variant='small'>
                     SHOP NOW
                   </Button>
-                  <div className={styles.promoNavigationWrapper}>
-                    <Button
-                      className={styles.arrow}
-                      variant='small'
-                      onClick={e => leftAction(e)}
-                    >
-                      <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
-                    </Button>
-                    <Button
-                      className={styles.arrow}
-                      variant='small'
-                      onClick={e => rightAction(e)}
-                    >
-                      <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
-                    </Button>
-                  </div>
+                </div>
+
+                <div className={styles.promoNavigationWrapper}>
+                  <Button
+                    className={styles.arrow}
+                    variant='small'
+                    onClick={e => leftAction(e)}
+                  >
+                    <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
+                  </Button>
+                  <Button
+                    className={styles.arrow}
+                    variant='small'
+                    onClick={e => rightAction(e)}
+                  >
+                    <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
+                  </Button>
                 </div>
               </div>
             ))}
