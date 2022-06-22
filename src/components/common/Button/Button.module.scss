@@ -56,3 +56,12 @@
     border: 1px solid $primary;
   }
 }
+
+.main-orange {
+  @extend .main;
+  background-color: $primary;
+
+  &:not(.noHover):hover {
+    background-color: lighten($primary, 10%);
+  }
+}
