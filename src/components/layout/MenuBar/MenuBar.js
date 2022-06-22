@@ -12,8 +12,8 @@ const MenuBar = ({ children }) => (
         <div className={'col '}>
           <ProductSearch />
         </div>
-        <div className={'col-auto ' + styles.menu}>
-          <nav className='navbar navbar-expand-md navbar-light bg-none'>
+        <div className={'col-auto order-2' + styles.menu}>
+          <nav className={'navbar navbar-expand-sm navbar-light bg-none'}>
             <div className='container-fluid'>
               <button
                 className='navbar-toggler'
