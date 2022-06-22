@@ -16,24 +16,28 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   getCompare,
   getHotDeals,
+  getPromo,
   toggleFavoriteProduct,
   toggleProductCompare,
 } from '../../../redux/productsRedux';
 
 const PromotedBox = () => {
   const [activePage, setActivePage] = useState(0);
+  const [activePagePromo, setActivePagePromo] = useState(0);
+
   const [delay, setDelay] = useState(3000);
-  const [activateFade, setActivateFade] = useState(false);
+  const [activateFade, setActivateFade] = useState('');
   const hotDealsData = useSelector(getHotDeals);
   const pagesCount = hotDealsData.length;
   const dispatch = useDispatch();
+  const promoData = useSelector(getPromo);
 
   const handlePageChange = newPage => {
     setDelay(10000);
-    setActivateFade(true);
+    setActivateFade('left');
     setTimeout(() => {
       setActivePage(newPage);
-      setTimeout(() => setActivateFade(false), 250);
+      setTimeout(() => setActivateFade(''), 250);
     }, 250);
   };
 
@@ -61,7 +65,7 @@ const PromotedBox = () => {
   const timeoutRef = useRef(null);
 
   useEffect(() => {
-    setTimeout(() => setActivateFade(false), 250);
+    setTimeout(() => setActivateFade(''), 250);
 
     timeoutRef.current = setTimeout(() => {
       setTimeout(() => {
@@ -69,7 +73,7 @@ const PromotedBox = () => {
           prevIndex === hotDealsData.length - 1 ? 0 : prevIndex + 1
         );
       }, 250);
-      setActivateFade(true);
+      setActivateFade('left');
     }, delay);
 
     if (delay === 10000) {
@@ -98,6 +102,40 @@ const PromotedBox = () => {
     );
   }
 
+  const rightAction = e => {
+    e.preventDefault();
+    setActivateFade('right');
+    setTimeout(() => {
+      setActivePagePromo(activePagePromo + 1);
+      if (activePagePromo >= promoData.length - 1) {
+        setActivePagePromo(activePagePromo);
+      }
+    }, 250);
+
+    if (activateFade === '') {
+      setTimeout(() => {
+        setActivateFade('');
+      }, 250);
+    }
+  };
+
+  const leftAction = e => {
+    e.preventDefault();
+    setActivateFade('right');
+    setTimeout(() => {
+      setActivePagePromo(activePagePromo - 1);
+      if (activePagePromo <= 0) {
+        setActivePagePromo(0);
+      }
+    }, 250);
+
+    if (activateFade === '') {
+      setTimeout(() => {
+        setActivateFade('');
+      }, 250);
+    }
+  };
+
   return (
     <div>
       <div className='container'>
@@ -113,7 +151,7 @@ const PromotedBox = () => {
                 </div>
                 <div key={item.id} className={styles.photoBox}>
                   <div
-                    className={activateFade === true ? styles.fadeIn : styles.fadeOut}
+                    className={activateFade === 'left' ? styles.fadeIn : styles.fadeOut}
                   >
                     <img className={styles.images} src={item.image} alt='furniture' />
                   </div>
@@ -195,33 +233,46 @@ const PromotedBox = () => {
             ))}
           </div>
           <div className='col-md-8'>
-            <div className={styles.promoWrapper}>
-              <img
-                className={styles.imagePromo}
-                src='/images/promotions/indoor-furniture.jpg'
-                alt='garden-furniture'
-              />
-              <div className={styles.banner}>
-                <div className={styles.titleWrapper}>
-                  <div>INDOOR</div>
-                  <div>FURNITURE</div>
-                </div>
-                <div className={styles.bannerSubTitle}>
-                  SAVE UP TO 50% OF ALL FURNITURE
+            {promoData.slice(activePagePromo, activePagePromo + 1).map(item => (
+              <div
+                key={item.id}
+                className={activateFade === 'right' ? styles.fadeIn : styles.fadeOut}
+              >
+                <div className={styles.promoWrapper}>
+                  <img
+                    className={styles.imagePromo}
+                    src={item.image}
+                    alt={item.imageAlt}
+                  />
+                  <div className={styles.banner}>
+                    <div className={styles.titleWrapper}>
+                      <div>{item.titleFirst}</div>
+                      <div>{item.titleSecond}</div>
+                    </div>
+                    <div className={styles.bannerSubTitle}>{item.subtitle} </div>
+                  </div>
+                  <Button className={styles.shopNow} variant='small'>
+                    SHOP NOW
+                  </Button>
+                  <div className={styles.promoNavigationWrapper}>
+                    <Button
+                      className={styles.arrow}
+                      variant='small'
+                      onClick={e => leftAction(e)}
+                    >
+                      <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
+                    </Button>
+                    <Button
+                      className={styles.arrow}
+                      variant='small'
+                      onClick={e => rightAction(e)}
+                    >
+                      <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
+                    </Button>
+                  </div>
                 </div>
               </div>
-              <Button className={styles.shopNow} variant='small'>
-                SHOP NOW
-              </Button>
-              <div className={styles.promoNavigationWrapper}>
-                <Button className={styles.arrow} variant='small'>
-                  <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
-                </Button>
-                <Button className={styles.arrow} variant='small'>
-                  <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
-                </Button>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

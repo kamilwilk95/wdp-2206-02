@@ -689,6 +689,32 @@ const initialState = {
       compare: false,
     },
   ],
+  promo: [
+    {
+      id: 1,
+      titleFirst: 'INDOOR',
+      titleSecond: 'FURNITURE',
+      subtitle: 'SAVE UP TO 50% OF ALL FURNITURE',
+      image: '/images/promotions/indoor-furniture.jpg',
+      imageAlt: 'indoor-furniture',
+    },
+    {
+      id: 2,
+      titleFirst: 'OUTLET',
+      titleSecond: 'SALE',
+      subtitle: 'DISCOUNT UP TO 90% !!!',
+      image: '/images/promotions/outlet-furniture.jpg',
+      imageAlt: 'outlet-furniture',
+    },
+    {
+      id: 3,
+      titleFirst: 'GARDEN',
+      titleSecond: 'COLLECTION',
+      subtitle: 'START SUMMER SEASON WITH STYLE',
+      image: '/images/promotions/garden-furniture.jpg',
+      imageAlt: 'garden-furniture',
+    },
+  ],
   cart: {
     products: [],
   },

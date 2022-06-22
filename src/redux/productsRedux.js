@@ -12,6 +12,7 @@ export const getCompare = ({ products }) =>
   products.filter(product => product.compare === true);
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
+export const getPromo = ({ promo }) => promo;
 
 /* actions */
 const createActionName = actionName => `app/products/${actionName}`;
