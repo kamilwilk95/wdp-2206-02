@@ -19,7 +19,7 @@ const SaleBox = sale_img => {
           </div>
           <div className={styles.rightinner}>
             <div>
-              <img src='./images/promotion-bed.jpg' alt='promotion' />
+              <img src='./images/furnitures-chairs.jpg' alt='promotion' />
               <p className={styles.topSale_text}>
                 <strong>OFFICE</strong> CHAIR<span> COLLECTION</span>
               </p>
