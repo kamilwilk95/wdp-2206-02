@@ -19,7 +19,6 @@ import {
   toggleFavoriteProduct,
   toggleProductCompare,
 } from '../../../redux/productsRedux';
-import PropTypes from 'prop-types';
 
 const PromotedBox = () => {
   const [activePage, setActivePage] = useState(0);
@@ -228,10 +227,6 @@ const PromotedBox = () => {
       </div>
     </div>
   );
-};
-
-PromotedBox.propTypes = {
-  id: PropTypes.string,
 };
 
 export default PromotedBox;
