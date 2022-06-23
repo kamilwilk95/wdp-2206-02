@@ -1,7 +1,6 @@
 import React from 'react';
-//import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +9,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { toggleFavoriteProduct } from '../../../redux/productsRedux';
 import StarsRating from '../../features/StarsRating/StarsRating';
-import { toggleProductCompare } from '../../../redux/productsRedux';
+import { toggleProductCompare, getCompare } from '../../../redux/productsRedux';
 
 const ProductBox = ({
   name,
@@ -32,15 +31,19 @@ const ProductBox = ({
     dispatch(toggleFavoriteProduct(productId));
   };
 
+  const getCompareProducts = useSelector(state => getCompare(state));
+
   const handleCompare = e => {
     e.preventDefault();
-    dispatch(toggleProductCompare(productId));
+    if (getCompareProducts.length < 4) {
+      dispatch(toggleProductCompare(productId));
+    }
   };
 
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-        <img className={styles.images} src={image} alt='Photo of products' />
+        <img className={styles.images} src={image} alt='furniture' />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
@@ -78,8 +81,8 @@ const ProductBox = ({
             </Button>
           </div>
         )}
-        <div className={styles.price}>
-          <Button noHover variant='small'>
+        <div>
+          <Button className={styles.price} noHover variant='small'>
             $ {price}
           </Button>
         </div>
