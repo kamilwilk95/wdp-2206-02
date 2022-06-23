@@ -43,6 +43,7 @@ const Gallery = () => {
     setActivateFade('true');
     setTimeout(() => {
       setActiveCategory(newCategory);
+      handleProductChange(e, categoryProducts[0].id);
       console.log('new', newCategory);
       console.log('new', activeCategory);
 
