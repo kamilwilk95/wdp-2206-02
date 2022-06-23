@@ -50,11 +50,7 @@ const Gallery = () => {
 
   const handleProductChange = (e, newProduct) => {
     e.preventDefault();
-    setActivateFade('true');
-    setTimeout(() => {
-      setActiveProduct(newProduct);
-      setTimeout(() => setActivateFade(''), 250);
-    }, 250);
+    setActiveProduct(newProduct);
   };
 
   const handleCompare = (e, id) => {
@@ -104,14 +100,14 @@ const Gallery = () => {
             </div>
 
             {/* Left box */}
-            <div className={styles.box_left}>
-              <div
-                className={
-                  activateFade === 'true'
-                    ? styles.promoted + ' ' + styles.fadeIn
-                    : styles.promoted + ' ' + styles.fadeOut
-                }
-              >
+            <div
+              className={
+                activateFade === 'true'
+                  ? styles.fadeIn + ' ' + styles.box_left
+                  : styles.fadeOut + ' ' + styles.box_left
+              }
+            >
+              <div className={styles.promoted}>
                 <img
                   src={showProduct.image}
                   alt={showProduct.name}
@@ -197,7 +193,13 @@ const Gallery = () => {
             </div>
 
             {/* Thumbnail menu on the bottom  */}
-            <div className={styles.thumbnailNavigationWrapper}>
+            <div
+              className={
+                activateFade === 'true'
+                  ? styles.fadeIn + ' ' + styles.thumbnailNavigationWrapper
+                  : styles.fadeOut + ' ' + styles.thumbnailNavigationWrapper
+              }
+            >
               <Button className={styles.arrow} variant='small'>
                 <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
               </Button>
