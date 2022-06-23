@@ -6,6 +6,12 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
+  galleryCategories: [
+    { id: 'featured', name: 'Featured' },
+    { id: 'topSeller', name: 'Top Seller' },
+    { id: 'saleOff', name: 'Sale Off' },
+    { id: 'topRated', name: 'Top Rated' },
+  ],
   products: [
     {
       id: 'aenean-ru-bristique-1',
@@ -20,6 +26,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: true,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -32,6 +39,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: true,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -44,6 +52,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -56,6 +65,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -68,6 +78,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -80,6 +91,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -304,12 +316,12 @@ const initialState = {
       price: 30,
       priceOld: 45,
       stars: 2,
-
       promo: 'sale',
       image: './images/chairs/chair-1.jpg',
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-2',
@@ -322,6 +334,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-3',
@@ -334,6 +347,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-4',
@@ -347,6 +361,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-5',
@@ -359,6 +374,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-6',
@@ -371,6 +387,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-7',
@@ -410,6 +427,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-2',
@@ -422,6 +440,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-3',
@@ -435,6 +454,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-4',
@@ -447,6 +467,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-5',
@@ -459,6 +480,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-6',
@@ -471,6 +493,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-7',
@@ -508,6 +531,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-2',
@@ -520,6 +544,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-3',
@@ -532,6 +557,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-4',
@@ -544,6 +570,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-5',
@@ -556,6 +583,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-6',
@@ -568,6 +596,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-7',

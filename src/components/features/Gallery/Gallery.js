@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 import styles from './Gallery.module.scss';
 import Button from '../../common/Button/Button';
@@ -13,8 +15,31 @@ import {
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import ReactTooltip from 'react-tooltip';
 import StarsRating from '../StarsRating/StarsRating';
+import { getAll } from '../../../redux/productsRedux';
+import { getGalleryCategories } from '../../../redux/categoriesRedux';
 
 const Gallery = () => {
+  const allProducts = useSelector(getAll);
+  const galleryCategories = useSelector(getGalleryCategories);
+
+  const [activeCategory, setActiveCategory] = useState('topSeller');
+  const categoryProducts = allProducts.filter(
+    item => item.galleryCategory === activeCategory
+  );
+  const [activeProduct, setActiveProduct] = useState(categoryProducts[0].id);
+
+  const showProduct = allProducts.find(item => item.id === activeProduct);
+
+  const handleCategoryChange = (e, newCategory) => {
+    e.preventDefault();
+    setActiveCategory(newCategory);
+    handleProductChange(e, categoryProducts[0].id);
+  };
+
+  const handleProductChange = (e, newProduct) => {
+    e.preventDefault();
+    setActiveProduct(newProduct);
+  };
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -31,20 +56,17 @@ const Gallery = () => {
             {/* Menu on top */}
             <div className={styles.menu}>
               <ul>
-                <li>
-                  <a href='#'>Featured</a>
-                </li>
-                <li>
-                  <a href='#' className={styles.active}>
-                    Top Seller
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>Sale Off</a>
-                </li>
-                <li>
-                  <a href='#'>Top Rated</a>
-                </li>
+                {galleryCategories.map(item => (
+                  <li key={item.id}>
+                    <a
+                      href='#'
+                      className={item.id === activeCategory ? styles.active : ''}
+                      onClick={e => handleCategoryChange(e, item.id)}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -52,7 +74,7 @@ const Gallery = () => {
             <div className={styles.box_left}>
               <div className={styles.promoted}>
                 <img
-                  src='/images/chairs/chair-8.png'
+                  src={showProduct.image}
                   alt='chair'
                   className={styles.images}
                 ></img>
@@ -132,36 +154,19 @@ const Gallery = () => {
               </Button>
               <div className={styles.thumbnailMenu}>
                 <ul>
-                  <li>
-                    <a href='#' className={styles.activeThumbnail}>
-                      <img src='/images/chairs/chair-1.jpg' alt='chair'></img>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <img src='/images/chairs/chair-2.jpg' alt='chair'></img>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <img src='/images/chairs/chair-3.jpg' alt='chair'></img>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <img src='/images/chairs/chair-4.jpg' alt='chair'></img>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <img src='/images/chairs/chair-5.jpg' alt='chair'></img>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <img src='/images/chairs/chair-6.jpeg' alt='chair'></img>
-                    </a>
-                  </li>
+                  {categoryProducts.map(item => (
+                    <li key={item.id}>
+                      <a
+                        href='#'
+                        className={
+                          item.id === activeProduct ? styles.activeThumbnail : ''
+                        }
+                        onClick={e => handleProductChange(e, item.id)}
+                      >
+                        <img src={item.image} alt='chair'></img>
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <Button className={styles.arrow} variant='small'>

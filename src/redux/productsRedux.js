@@ -9,6 +9,14 @@ export const getCompare = ({ products }) =>
   products.filter(product => product.compare === true);
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
+// export const getGalleryFeatured = ({ products }) =>
+//   products.filter(item => item.galleryTFeatured === true);
+// export const getGalleryTopSeller = ({ products }) =>
+//   products.filter(item => item.galleryTopSeller === true);
+// export const getGallerySaleOff = ({ products }) =>
+//   products.filter(item => item.gallerySaleOff === true);
+// export const getGalleryTopRated = ({ products }) =>
+//   products.filter(item => item.galleryTopRated === true);
 
 /* actions */
 const createActionName = actionName => `app/products/${actionName}`;
