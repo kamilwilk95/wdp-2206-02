@@ -17,7 +17,7 @@ const Footer = ({ children }) => (
     <div className={styles.footerMenu}>
       <div className='container'>
         <div className='row'>
-          <div className='col-6 text-left col-md-3'>
+          <div className='col-6 text-center col-md-3'>
             <div className={styles.menuWrapper}>
               <h6>Information</h6>
               <ul>
@@ -104,7 +104,7 @@ const Footer = ({ children }) => (
     <div className={styles.bottomBar}>
       <div className='container'>
         <div className='row'>
-          <div className={'col text-center '}> </div>
+          <div className='col text-center'> </div>
         </div>
         <div className='row justify-content-center'>
           <div className={'col text-xs-left ' + styles.copyright}>
