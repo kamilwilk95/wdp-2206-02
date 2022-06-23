@@ -219,13 +219,13 @@ const PromotedBox = () => {
                   {item.priceOld && (
                     <div className={styles.priceold}>
                       <Button noHover variant='light'>
-                        $ {item.priceOld}
+                        $ {item.priceOld.toFixed(2)}
                       </Button>
                     </div>
                   )}
-                  <div>
+                  <div className={styles.price}>
                     <Button noHover variant='small'>
-                      $ {item.price}
+                      $ {item.price.toFixed(2)}
                     </Button>
                   </div>
                 </div>
