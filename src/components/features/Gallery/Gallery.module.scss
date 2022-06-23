@@ -97,6 +97,14 @@
         .outlines {
           display: flex;
           flex-direction: column;
+          .compare {
+            color: $background-white;
+            background-color: $primary;
+          }
+          .isFavorite {
+            color: $background-white;
+            background-color: $primary;
+          }
         }
       }
       .product_info {
@@ -165,6 +173,16 @@
           }
         }
       }
+    }
+
+    .fadeIn {
+      opacity: 0;
+      transition: opacity 250ms ease-in-out;
+    }
+
+    .fadeOut {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out;
     }
   }
 

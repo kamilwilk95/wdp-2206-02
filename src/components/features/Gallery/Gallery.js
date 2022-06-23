@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 import styles from './Gallery.module.scss';
@@ -15,14 +15,22 @@ import {
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import ReactTooltip from 'react-tooltip';
 import StarsRating from '../StarsRating/StarsRating';
-import { getAll } from '../../../redux/productsRedux';
+import {
+  getAll,
+  getCompare,
+  toggleProductCompare,
+  toggleFavoriteProduct,
+} from '../../../redux/productsRedux';
 import { getGalleryCategories } from '../../../redux/categoriesRedux';
 
 const Gallery = () => {
+  const dispatch = useDispatch();
   const allProducts = useSelector(getAll);
   const galleryCategories = useSelector(getGalleryCategories);
-
+  const getCompareProducts = useSelector(getCompare);
+  const [activateFade, setActivateFade] = useState('');
   const [activeCategory, setActiveCategory] = useState('topSeller');
+
   const categoryProducts = allProducts.filter(
     item => item.galleryCategory === activeCategory
   );
@@ -32,13 +40,36 @@ const Gallery = () => {
 
   const handleCategoryChange = (e, newCategory) => {
     e.preventDefault();
-    setActiveCategory(newCategory);
-    handleProductChange(e, categoryProducts[0].id);
+    setActivateFade('true');
+    setTimeout(() => {
+      setActiveCategory(newCategory);
+      console.log('new', newCategory);
+      console.log('new', activeCategory);
+
+      setTimeout(() => setActivateFade(''), 250);
+    }, 250);
   };
 
   const handleProductChange = (e, newProduct) => {
     e.preventDefault();
     setActiveProduct(newProduct);
+  };
+
+  const handleCompare = (e, id) => {
+    e.preventDefault();
+    if (getCompareProducts.length < 4) {
+      dispatch(toggleProductCompare(id));
+    }
+  };
+
+  const handleFavorite = (e, id) => {
+    e.preventDefault();
+    dispatch(toggleFavoriteProduct(id));
+  };
+
+  const handleClick = e => {
+    // placeholder
+    e.preventDefault();
   };
   return (
     <div className={styles.root}>
@@ -74,17 +105,20 @@ const Gallery = () => {
             <div className={styles.box_left}>
               <div className={styles.promoted}>
                 <img
-                  src={showProduct.image}
-                  alt='chair'
+                  src={categoryProducts[0].image}
+                  alt={showProduct.name}
                   className={styles.images}
                 ></img>
                 <div className={styles.actions}>
                   <div className={styles.outlines}>
                     <Button
-                      className='mb-1'
+                      className={
+                        showProduct.isFavorite ? 'mb-1 ' + styles.isFavorite : 'mb-1'
+                      }
                       variant='outline-orange'
                       data-tip='Add to favorite'
                       data-for='favorite'
+                      onClick={e => handleFavorite(e, showProduct.id)}
                     >
                       <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
                     </Button>
@@ -95,10 +129,13 @@ const Gallery = () => {
                       effect='float'
                     />
                     <Button
-                      className='mb-1'
+                      className={
+                        showProduct.compare ? 'mb-1 ' + styles.compare : 'mb-1'
+                      }
                       variant='outline-orange'
                       data-tip='Add to compare'
                       data-for='compare'
+                      onClick={e => handleCompare(e, showProduct.id)}
                     >
                       <FontAwesomeIcon icon={faExchangeAlt}>
                         Add to compare
@@ -115,6 +152,7 @@ const Gallery = () => {
                       variant='outline-orange'
                       data-tip='Quick View'
                       data-for='view'
+                      onClick={e => handleClick(e)}
                     >
                       <FontAwesomeIcon icon={faEye}>Show</FontAwesomeIcon>
                     </Button>
@@ -124,6 +162,7 @@ const Gallery = () => {
                       variant='outline-orange'
                       data-tip='Add to cart'
                       data-for='cart'
+                      onClick={e => handleClick(e)}
                     >
                       <FontAwesomeIcon icon={faShoppingBasket}>
                         Add to cart
@@ -134,14 +173,16 @@ const Gallery = () => {
                 </div>
                 <div className={styles.product_info}>
                   <div className={styles.price}>
-                    <p className='m-0'>$120</p>
-                    <p className={styles.old_price}>$160</p>
+                    <p className='m-0'>${showProduct.price}</p>
+                    <p className={styles.old_price}>
+                      {showProduct.priceOld ? '$' + showProduct.priceOld : ' $160'}
+                    </p>
                   </div>
                 </div>
                 <div className={styles.frame_wrapper}>
                   <div className={styles.frame}>
-                    <p className={styles.product_name}>Comfortable Chair no.8</p>
-                    <StarsRating id={1} stars={4} />
+                    <p className={styles.product_name}>{showProduct.name}</p>
+                    <StarsRating id={showProduct.id} stars={showProduct.stars} />
                   </div>
                 </div>
               </div>
