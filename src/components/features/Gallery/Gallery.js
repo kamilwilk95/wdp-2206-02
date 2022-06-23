@@ -106,7 +106,7 @@ const Gallery = () => {
             <div className={styles.box_left}>
               <div className={styles.promoted}>
                 <img
-                  src={categoryProducts[0].image}
+                  src={showProduct.image}
                   alt={showProduct.name}
                   className={styles.images}
                 ></img>
