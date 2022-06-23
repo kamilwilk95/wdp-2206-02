@@ -8,7 +8,7 @@ import styles from './MenuBar.module.scss';
 const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
-      <div className='row align-items-center'>
+      <div className={'row align-items-center' + styles.mobile_menu}>
         <div className={'col '}>
           <ProductSearch />
         </div>
