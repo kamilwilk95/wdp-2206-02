@@ -44,16 +44,17 @@ const Gallery = () => {
     setTimeout(() => {
       setActiveCategory(newCategory);
       handleProductChange(e, categoryProducts[0].id);
-      console.log('new', newCategory);
-      console.log('new', activeCategory);
-
       setTimeout(() => setActivateFade(''), 250);
     }, 250);
   };
 
   const handleProductChange = (e, newProduct) => {
     e.preventDefault();
-    setActiveProduct(newProduct);
+    setActivateFade('true');
+    setTimeout(() => {
+      setActiveProduct(newProduct);
+      setTimeout(() => setActivateFade(''), 250);
+    }, 250);
   };
 
   const handleCompare = (e, id) => {
@@ -104,7 +105,13 @@ const Gallery = () => {
 
             {/* Left box */}
             <div className={styles.box_left}>
-              <div className={styles.promoted}>
+              <div
+                className={
+                  activateFade === 'true'
+                    ? styles.promoted + ' ' + styles.fadeIn
+                    : styles.promoted + ' ' + styles.fadeOut
+                }
+              >
                 <img
                   src={showProduct.image}
                   alt={showProduct.name}
