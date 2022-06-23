@@ -8,7 +8,7 @@ const SaleBox = sale_img => {
     <div>
       <div className='container'>
         <div className={styles.wrapper}>
-          <div className={styles.leftinner}>
+          <div className={styles.left_inner}>
             <div className={styles.box_img}>
               <img src='./images/promotion-bed.jpg' alt='sale-left' />
             </div>
@@ -17,7 +17,7 @@ const SaleBox = sale_img => {
             </p>
             <p className={styles.text_price}>-20%</p>
           </div>
-          <div className={styles.rightinner}>
+          <div className={styles.right_inner}>
             <div>
               <div className={styles.overlay_top}>
                 <img src='./images/furnitures-chairs.jpg' alt='sale' />{' '}

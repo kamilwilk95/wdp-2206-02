@@ -7,7 +7,7 @@
   width: 100%;
   min-height: 400px;
 
-  .leftinner {
+  .left_inner {
     width: 50%;
     height: 400px;
     color: $text-color-dirty-white;
@@ -50,7 +50,7 @@
       padding: 7px;
     }
   }
-  .rightinner {
+  .right_inner {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -95,7 +95,7 @@
       left: 30px;
     }
   }
-  .rightinner > div {
+  .right_inner > div {
     padding: 0;
     margin: 0;
     height: 40%;
