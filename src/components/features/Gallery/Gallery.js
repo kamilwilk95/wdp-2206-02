@@ -29,7 +29,9 @@ const Gallery = () => {
   const allProducts = useSelector(getAll);
   const galleryCategories = useSelector(getGalleryCategories);
   const getCompareProducts = useSelector(getCompare);
-  const [activateFade, setActivateFade] = useState(false);
+  const [activatePhotoFade, setActivatePhotoFade] = useState(false);
+  const [activateSliderFade, setActivateSliderFade] = useState(false);
+
   const [activeCategory, setActiveCategory] = useState('topSeller');
 
   const categoryProducts = allProducts.filter(
@@ -38,11 +40,15 @@ const Gallery = () => {
   const [activeProduct, setActiveProduct] = useState(categoryProducts[0].id);
   const handleCategoryChange = (e, newCategory) => {
     e.preventDefault();
-    setActivateFade(true);
+    setActivatePhotoFade(true);
+    setActivateSliderFade(true);
     setTimeout(() => {
       setActiveCategory(newCategory);
 
-      setTimeout(() => setActivateFade(''), 250);
+      setTimeout(() => {
+        setActivatePhotoFade(false);
+        setActivateSliderFade(false);
+      }, 250);
     }, 250);
   };
 
@@ -52,7 +58,13 @@ const Gallery = () => {
 
   const handleProductChange = (e, newProduct) => {
     e.preventDefault();
-    setActiveProduct(newProduct);
+    setActivatePhotoFade(true);
+    setTimeout(() => {
+      setActiveProduct(newProduct);
+      setTimeout(() => {
+        setActivatePhotoFade(false);
+      }, 250);
+    }, 250);
   };
 
   const showProduct = allProducts.find(item => item.id === activeProduct);
@@ -105,14 +117,14 @@ const Gallery = () => {
             </div>
 
             {/* Left box */}
-            <div
-              className={
-                activateFade === true
-                  ? styles.fadeIn + ' ' + styles.box_left
-                  : styles.fadeOut + ' ' + styles.box_left
-              }
-            >
-              <div className={styles.promoted}>
+            <div className={styles.box_left}>
+              <div
+                className={
+                  activatePhotoFade === true
+                    ? styles.fadeIn + ' ' + styles.promoted
+                    : styles.fadeOut + ' ' + styles.promoted
+                }
+              >
                 <img
                   src={showProduct.image}
                   alt={showProduct.name}
@@ -200,7 +212,7 @@ const Gallery = () => {
             {/* Thumbnail menu on the bottom  */}
             <div
               className={
-                activateFade === true
+                activateSliderFade === true
                   ? styles.fadeIn + ' ' + styles.thumbnailNavigationWrapper
                   : styles.fadeOut + ' ' + styles.thumbnailNavigationWrapper
               }

@@ -175,6 +175,15 @@
         }
       }
     }
+    .fadeIn {
+      opacity: 0;
+      transition: opacity 250ms ease-in-out;
+    }
+
+    .fadeOut {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out;
+    }
   }
 
   .thumbnailNavigationWrapper {
@@ -220,6 +229,15 @@
         }
       }
     }
+  }
+  .fadeIn {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+  }
+
+  .fadeOut {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
   }
 
   .box_right {
@@ -267,15 +285,5 @@
       transform: translate(-50%, -50%);
       z-index: 1;
     }
-  }
-
-  .fadeIn {
-    opacity: 0;
-    transition: opacity 250ms ease-in-out;
-  }
-
-  .fadeOut {
-    opacity: 1;
-    transition: opacity 250ms ease-in-out;
   }
 }
