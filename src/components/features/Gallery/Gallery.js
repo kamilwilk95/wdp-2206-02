@@ -30,28 +30,34 @@ const Gallery = () => {
   const getCompareProducts = useSelector(getCompare);
   const [activateFade, setActivateFade] = useState('');
   const [activeCategory, setActiveCategory] = useState('topSeller');
+  const [photoIndex, setPhotoIndex] = useState(0);
 
   const categoryProducts = allProducts.filter(
     item => item.galleryCategory === activeCategory
   );
-  const [activeProduct, setActiveProduct] = useState(categoryProducts[0].id);
 
-  const showProduct = allProducts.find(item => item.id === activeProduct);
+  const [activeProduct, setActiveProduct] = useState(categoryProducts[0].id);
 
   const handleCategoryChange = (e, newCategory) => {
     e.preventDefault();
     setActivateFade('true');
-    setTimeout(() => {
-      setActiveCategory(newCategory);
-      handleProductChange(e, categoryProducts[0].id);
-      setTimeout(() => setActivateFade(''), 250);
-    }, 250);
+    setActiveCategory(newCategory);
+    setActiveProduct(categoryProducts[0].id);
+    setPhotoIndex(categoryProducts.indexOf(showProduct));
+    setTimeout(() => setActivateFade(''), 250);
   };
 
   const handleProductChange = (e, newProduct) => {
     e.preventDefault();
     setActiveProduct(newProduct);
   };
+
+  const showProduct = allProducts.find(item => item.id === activeProduct);
+
+  console.log('categoryProducts', categoryProducts);
+  console.log('activeProduct', activeProduct);
+  console.log('showProduct', showProduct);
+  console.log('pindex', photoIndex);
 
   const handleCompare = (e, id) => {
     e.preventDefault();
@@ -69,6 +75,7 @@ const Gallery = () => {
     // placeholder
     e.preventDefault();
   };
+
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -200,7 +207,11 @@ const Gallery = () => {
                   : styles.fadeOut + ' ' + styles.thumbnailNavigationWrapper
               }
             >
-              <Button className={styles.arrow} variant='small'>
+              <Button
+                className={styles.arrow}
+                variant='small'
+                onClick={e => handleClick(e)}
+              >
                 <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
               </Button>
               <div className={styles.thumbnailMenu}>
@@ -220,7 +231,11 @@ const Gallery = () => {
                   ))}
                 </ul>
               </div>
-              <Button className={styles.arrow} variant='small'>
+              <Button
+                className={styles.arrow}
+                variant='small'
+                onClick={e => handleClick(e)}
+              >
                 <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
               </Button>
             </div>
