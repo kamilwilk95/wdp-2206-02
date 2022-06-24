@@ -1,22 +1,18 @@
 /* selectors */
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
+
 export const getIsFavorite = ({ products }) =>
   products.filter(product => product.isFavorite === true);
+export const getHotDeals = ({ products }) =>
+  products.filter(product => product.hotDeal === true);
 export const getProductById = ({ products }, productId) =>
   products.find(product => product.id === productId);
 export const getCompare = ({ products }) =>
   products.filter(product => product.compare === true);
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
-// export const getGalleryFeatured = ({ products }) =>
-//   products.filter(item => item.galleryTFeatured === true);
-// export const getGalleryTopSeller = ({ products }) =>
-//   products.filter(item => item.galleryTopSeller === true);
-// export const getGallerySaleOff = ({ products }) =>
-//   products.filter(item => item.gallerySaleOff === true);
-// export const getGalleryTopRated = ({ products }) =>
-//   products.filter(item => item.galleryTopRated === true);
+export const getPromo = ({ promo }) => promo;
 
 /* actions */
 const createActionName = actionName => `app/products/${actionName}`;
