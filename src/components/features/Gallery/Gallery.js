@@ -31,8 +31,8 @@ const Gallery = () => {
   const getCompareProducts = useSelector(getCompare);
   const [activatePhotoFade, setActivatePhotoFade] = useState(false);
   const [activateSliderFade, setActivateSliderFade] = useState(false);
-
   const [activeCategory, setActiveCategory] = useState('topSeller');
+  const [productIndex, setProductIndex] = useState(0);
 
   const categoryProducts = allProducts.filter(
     item => item.galleryCategory === activeCategory
@@ -67,6 +67,10 @@ const Gallery = () => {
     }, 250);
   };
 
+  useEffect(() => {
+    setProductIndex(categoryProducts.indexOf(showProduct));
+  }, [activeProduct]);
+
   const showProduct = allProducts.find(item => item.id === activeProduct);
 
   const handleCompare = (e, id) => {
@@ -81,8 +85,22 @@ const Gallery = () => {
     dispatch(toggleFavoriteProduct(id));
   };
 
+  const handleRight = e => {
+    e.preventDefault();
+    if (productIndex < categoryProducts.length - 1) {
+      setActiveProduct(categoryProducts[productIndex + 1].id);
+    }
+  };
+
+  const handleLeft = e => {
+    e.preventDefault();
+    if (productIndex > 0) {
+      setActiveProduct(categoryProducts[productIndex - 1].id);
+    }
+  };
+
   const handleClick = e => {
-    // placeholder
+    //placeholder
     e.preventDefault();
   };
 
@@ -220,7 +238,7 @@ const Gallery = () => {
               <Button
                 className={styles.arrow}
                 variant='small'
-                onClick={e => handleClick(e)}
+                onClick={e => handleLeft(e)}
               >
                 <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
               </Button>
@@ -244,7 +262,7 @@ const Gallery = () => {
               <Button
                 className={styles.arrow}
                 variant='small'
-                onClick={e => handleClick(e)}
+                onClick={e => handleRight(e)}
               >
                 <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
               </Button>
