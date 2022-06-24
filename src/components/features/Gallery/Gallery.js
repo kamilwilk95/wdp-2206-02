@@ -41,10 +41,12 @@ const Gallery = () => {
   const handleCategoryChange = (e, newCategory) => {
     e.preventDefault();
     setActivateFade('true');
-    setActiveCategory(newCategory);
-    setActiveProduct(categoryProducts[0].id);
-    setPhotoIndex(categoryProducts.indexOf(showProduct));
-    setTimeout(() => setActivateFade(''), 250);
+    setTimeout(() => {
+      setActiveCategory(newCategory);
+      setActiveProduct(categoryProducts[0].id);
+      setPhotoIndex(categoryProducts.indexOf(showProduct));
+      setTimeout(() => setActivateFade(''), 250);
+    }, 250);
   };
 
   const handleProductChange = (e, newProduct) => {
