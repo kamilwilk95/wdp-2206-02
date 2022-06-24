@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 
@@ -28,26 +28,26 @@ const Gallery = () => {
   const allProducts = useSelector(getAll);
   const galleryCategories = useSelector(getGalleryCategories);
   const getCompareProducts = useSelector(getCompare);
-  const [activateFade, setActivateFade] = useState('');
+  const [activateFade, setActivateFade] = useState(false);
   const [activeCategory, setActiveCategory] = useState('topSeller');
-  const [photoIndex, setPhotoIndex] = useState(0);
 
   const categoryProducts = allProducts.filter(
     item => item.galleryCategory === activeCategory
   );
-
   const [activeProduct, setActiveProduct] = useState(categoryProducts[0].id);
-
   const handleCategoryChange = (e, newCategory) => {
     e.preventDefault();
-    setActivateFade('true');
+    setActivateFade(true);
     setTimeout(() => {
       setActiveCategory(newCategory);
-      setActiveProduct(categoryProducts[0].id);
-      setPhotoIndex(categoryProducts.indexOf(showProduct));
+
       setTimeout(() => setActivateFade(''), 250);
     }, 250);
   };
+
+  useEffect(() => {
+    setActiveProduct(categoryProducts[0].id);
+  }, [activeCategory, categoryProducts]);
 
   const handleProductChange = (e, newProduct) => {
     e.preventDefault();
@@ -55,11 +55,6 @@ const Gallery = () => {
   };
 
   const showProduct = allProducts.find(item => item.id === activeProduct);
-
-  console.log('categoryProducts', categoryProducts);
-  console.log('activeProduct', activeProduct);
-  console.log('showProduct', showProduct);
-  console.log('pindex', photoIndex);
 
   const handleCompare = (e, id) => {
     e.preventDefault();
@@ -111,7 +106,7 @@ const Gallery = () => {
             {/* Left box */}
             <div
               className={
-                activateFade === 'true'
+                activateFade === true
                   ? styles.fadeIn + ' ' + styles.box_left
                   : styles.fadeOut + ' ' + styles.box_left
               }
@@ -204,7 +199,7 @@ const Gallery = () => {
             {/* Thumbnail menu on the bottom  */}
             <div
               className={
-                activateFade === 'true'
+                activateFade === true
                   ? styles.fadeIn + ' ' + styles.thumbnailNavigationWrapper
                   : styles.fadeOut + ' ' + styles.thumbnailNavigationWrapper
               }
