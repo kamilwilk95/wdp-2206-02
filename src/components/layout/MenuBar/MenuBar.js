@@ -7,12 +7,12 @@ import styles from './MenuBar.module.scss';
 
 const MenuBar = ({ children }) => (
   <div className={styles.root}>
-    <div className='container'>
-      <div className={'row align-items-center' + styles.mobile_menu}>
-        <div className={'col '}>
+    <div className='container pb-5'>
+      <div className={'row align-items-center ' + styles.menu}>
+        <div className={'col ' + styles.searchField}>
           <ProductSearch />
         </div>
-        <div className={'col-auto order-2' + styles.menu}>
+        <div className='col-auto'>
           <nav className={'navbar navbar-expand-sm navbar-light bg-none'}>
             <div className='container-fluid'>
               <button

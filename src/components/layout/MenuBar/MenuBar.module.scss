@@ -3,19 +3,18 @@
 .root {
   box-shadow: 2px 3.464px 6px $box-shadow;
   background-color: #ffffff;
+  display: flex;
 
   :global(.container) > :global(.row) {
     height: 84px;
   }
 
   .menu {
-    display: flex;
     align-self: stretch;
 
     ul {
       margin: 0;
       padding: 0;
-      display: flex;
 
       li {
         list-style: none;
@@ -53,9 +52,13 @@
 
 @media (max-width: 768px) {
   .container {
-    display: flex;
+    justify-content: center;
     .mobile_menu {
-      flex-direction: column-reverse;
+      flex-direction: row-reverse;
+
+      .searchField {
+        left: 50%;
+      }
     }
   }
 }
