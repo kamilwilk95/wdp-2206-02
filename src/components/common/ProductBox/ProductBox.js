@@ -77,13 +77,13 @@ const ProductBox = ({
         {priceOld && (
           <div className={styles.priceold}>
             <Button noHover variant='light'>
-              $ {priceOld}
+              $ {priceOld.toFixed(2)}
             </Button>
           </div>
         )}
         <div>
           <Button className={styles.price} noHover variant='small'>
-            $ {price}
+            $ {price.toFixed(2)}
           </Button>
         </div>
       </div>
