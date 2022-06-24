@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -47,7 +48,7 @@ const Gallery = () => {
 
   useEffect(() => {
     setActiveProduct(categoryProducts[0].id);
-  }, [activeCategory, categoryProducts]);
+  }, [activeCategory]);
 
   const handleProductChange = (e, newProduct) => {
     e.preventDefault();
