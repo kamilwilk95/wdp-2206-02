@@ -1,20 +1,22 @@
 @import "../../../styles/settings.scss";
 
 .root {
+  position: relative;
   box-shadow: 2px 3.464px 6px $box-shadow;
   background-color: #ffffff;
-  display: flex;
 
   :global(.container) > :global(.row) {
-    height: 84px;
+    height: 120px;
   }
 
   .menu {
     align-self: stretch;
+    display: flex;
 
     ul {
       margin: 0;
       padding: 0;
+      display: flex;
 
       li {
         list-style: none;
@@ -51,14 +53,13 @@
 }
 
 @media (max-width: 768px) {
-  .container {
+  .menu {
     justify-content: center;
-    .mobile_menu {
-      flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
 
-      .searchField {
-        left: 50%;
-      }
+    .searchField {
+      display: flex;
+      justify-content: center;
     }
   }
 }
