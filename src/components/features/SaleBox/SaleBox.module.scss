@@ -7,7 +7,7 @@
   width: 100%;
   min-height: 400px;
 
-  .left_inner {
+  .left-inner {
     width: 50%;
     height: 400px;
     color: $text-color-dirty-white;
@@ -16,7 +16,7 @@
       width: 100%;
     }
 
-    .box_img::before {
+    .box-img::before {
       position: absolute;
       content: "";
       opacity: 0.4;
@@ -27,7 +27,7 @@
       left: 20px;
     }
 
-    .promo_text {
+    .promo-text {
       font-size: 28px;
       bottom: 50%;
       left: 1%;
@@ -64,11 +64,11 @@
       object-fit: cover;
     }
 
-    .overlay_top {
+    .overlay-top {
       height: 100%;
     }
 
-    .overlay_top::before {
+    .overlay-top::before {
       position: absolute;
       content: "";
       opacity: 0.4;
@@ -79,11 +79,11 @@
       left: 30px;
     }
 
-    .overlay_bottom {
+    .overlay-bottom {
       height: 100%;
     }
 
-    .overlay_bottom::before {
+    .overlay-bottom::before {
       position: absolute;
       content: "";
       opacity: 0.4;
@@ -94,7 +94,7 @@
       left: 30px;
     }
   }
-  .right_inner > div {
+  .right-inner > div {
     padding: 0;
     margin: 0;
     height: 40%;
@@ -105,7 +105,7 @@
     z-index: 1;
   }
 
-  .topSale_text {
+  .topSale-text {
     top: 10%;
     left: 40%;
     font-size: 20px;
@@ -117,14 +117,14 @@
     }
   }
 
-  .topSale_text_price {
+  .topSale-text_price {
     top: 23%;
     left: 40%;
     font-size: 20px;
     color: $text-price-sale;
   }
 
-  .bottomSale_text {
+  .bottomSale-text {
     font-size: 18px;
     top: 50%;
     left: 60%;
