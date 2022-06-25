@@ -63,3 +63,13 @@
     }
   }
 }
+
+@media (max-width: 540px) {
+  .menu {
+    flex-wrap: nowrap;
+
+    .searchField {
+      display: flex;
+    }
+  }
+}
