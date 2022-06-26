@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './Brands.module.scss';
 import Button from '../../common/Button/Button';
