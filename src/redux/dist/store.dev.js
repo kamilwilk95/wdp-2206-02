@@ -15,6 +15,8 @@ var _productsRedux = _interopRequireDefault(require('./productsRedux'));
 
 var _settingsReducer = _interopRequireDefault(require('./settingsReducer'));
 
+var _brandsRedux = _interopRequireDefault(require('./brandsRedux'));
+
 var _feedbackRedux = _interopRequireDefault(require('./feedbackRedux'));
 
 function _interopRequireDefault(obj) {
@@ -27,6 +29,7 @@ var reducers = {
   categories: _categoriesRedux['default'],
   products: _productsRedux['default'],
   settings: _settingsReducer['default'],
+  brands: _brandsRedux['default'],
   feedback: _feedbackRedux['default'],
 }; // add blank reducers for initial state properties without reducers
 

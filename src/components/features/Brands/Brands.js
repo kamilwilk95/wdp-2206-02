@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+
+import { getAllBrands } from '../../../redux/brandsRedux';
 
 import styles from './Brands.module.scss';
 import Button from '../../common/Button/Button';
@@ -6,6 +9,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Brands = () => {
+  const allBrands = useSelector(getAllBrands);
+  const [activeBrands, setActiveBrands] = useState('');
+
+  const rightSlide = e => {
+    e.preventDefault();
+    setTimeout(() => {
+      setActiveBrands(activeBrands);
+    }, 500);
+  };
+
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -48,7 +61,11 @@ const Brands = () => {
                 </li>
               </ul>
             </div>
-            <Button className={styles.arrow} variant='small'>
+            <Button
+              className={styles.arrow}
+              variant='small'
+              onClick={e => rightSlide(e)}
+            >
               <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
             </Button>
           </div>

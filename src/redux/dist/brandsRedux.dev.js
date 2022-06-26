@@ -2,16 +2,16 @@ Object.defineProperty(exports, '__esModule', {
   value: true,
 });
 exports['default'] = reducer;
-exports.getAll = void 0;
+exports.getAllBrands = void 0;
 
 /* selectors */
-var getAll = function getAll(_ref) {
+var getAllBrands = function getAllBrands(_ref) {
   var brands = _ref.brands;
   return brands;
 };
 /* reducer */
 
-exports.getAll = getAll;
+exports.getAllBrands = getAllBrands;
 
 function reducer() {
   var statePart =
