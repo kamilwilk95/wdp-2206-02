@@ -136,8 +136,8 @@
   }
   .wrapper .left_inner .box_img::before {
     width: 95%;
-    height: 38%;
-    top: 15px;
+    height: 39%;
+    top: 13px;
     left: 17px;
   }
   .wrapper .left_inner .promo_text {
@@ -153,8 +153,9 @@
   }
   .wrapper .left_inner .text_price {
     color: #d8d8d8ff;
-    top: 32%;
+    top: 31%;
     left: 5%;
+    bottom: 58%;
     font-size: 30px;
     font-weight: 700;
     border: 5px solid #d8d8d8ff;

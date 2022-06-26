@@ -148,8 +148,8 @@
 
       .box_img::before {
         width: 95%;
-        height: 38%;
-        top: 15px;
+        height: 39%;
+        top: 13px;
         left: 17px;
       }
       .promo_text {
@@ -165,8 +165,9 @@
       }
       .text_price {
         color: $text-color-dirty-white;
-        top: 32%;
+        top: 31%;
         left: 5%;
+        bottom: 58%;
         font-size: 30px;
         font-weight: 700;
         border: 5px solid $text-color-dirty-white;
