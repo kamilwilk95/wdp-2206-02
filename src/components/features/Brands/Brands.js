@@ -9,8 +9,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Brands = () => {
+  const [activePage, setActivePage] = useState(0);
   const allBrands = useSelector(getAllBrands);
   const [activeBrands, setActiveBrands] = useState('');
+
+  // dodać stan obecny czyli 6 zdjeć na sliderze
+  // nowy stan przesunięcię na kolejne 6 elementów.
 
   const rightSlide = e => {
     e.preventDefault();
@@ -27,40 +31,17 @@ const Brands = () => {
             <Button className={styles.arrow} variant='small'>
               <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
             </Button>
-            <div className={styles.thumbnailMenu}>
-              <ul>
-                <li>
-                  <a href='#' className={styles.activeThumbnail}>
-                    <img src='/images/brands/brands-1.jpg' alt='brand'></img>
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src='/images/brands/brands-2.jpg' alt='brands'></img>
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src='/images/brands/brands-3.jpg' alt='brands'></img>
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src='/images/brands/brands-4.jpg' alt='brands'></img>
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src='/images/brands/brands-5.jpg' alt='brands'></img>
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src='/images/brands/brands-6.jpg' alt='brands'></img>
-                  </a>
-                </li>
-              </ul>
-            </div>
+            {allBrands.map(item => (
+              <div className={styles.thumbnailMenu} key={item.id}>
+                <ul>
+                  <li>
+                    <a href='#' className={styles.activeThumbnail}>
+                      <img src={item.image} alt='brands' />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            ))}
             <Button
               className={styles.arrow}
               variant='small'

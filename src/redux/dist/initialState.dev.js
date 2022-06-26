@@ -1,10 +1,46 @@
-const initialState = {
+Object.defineProperty(exports, '__esModule', {
+  value: true,
+});
+exports['default'] = void 0;
+
+var _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true,
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+
+var initialState = {
   categories: [
-    { id: 'bed', name: 'Bed' },
-    { id: 'chair', name: 'Chair' },
-    { id: 'sofa', name: 'Sofa' },
-    { id: 'table', name: 'Table' },
-    { id: 'dining', name: 'Dining' },
+    {
+      id: 'bed',
+      name: 'Bed',
+    },
+    {
+      id: 'chair',
+      name: 'Chair',
+    },
+    {
+      id: 'sofa',
+      name: 'Sofa',
+    },
+    {
+      id: 'table',
+      name: 'Table',
+    },
+    {
+      id: 'dining',
+      name: 'Dining',
+    },
   ],
   products: [
     {
@@ -21,7 +57,7 @@ const initialState = {
       isFavorite: true,
       compare: false,
     },
-    {
+    ((_ref = {
       id: 'aenean-ru-bristique-2',
       name: 'Aenean Ru Bristique 2',
       category: 'bed',
@@ -29,12 +65,13 @@ const initialState = {
       image: './images/fornitures-bed-2.jpg',
       stars: 2,
       promo: 'sale',
-      image: './images/beds/furniture-bed-2.jpg',
-      newFurniture: true,
-      isFavorite: true,
-      compare: false,
-    },
-    {
+    }),
+    _defineProperty(_ref, 'image', './images/beds/furniture-bed-2.jpg'),
+    _defineProperty(_ref, 'newFurniture', true),
+    _defineProperty(_ref, 'isFavorite', true),
+    _defineProperty(_ref, 'compare', false),
+    _ref),
+    ((_ref2 = {
       id: 'aenean-ru-bristique-3',
       name: 'Aenean Ru Bristique 3',
       category: 'bed',
@@ -42,12 +79,13 @@ const initialState = {
       image: './images/fornitures-bed-3.jpg',
       stars: 2,
       promo: 'sale',
-      image: './images/beds/furniture-bed-3.jpg',
-      newFurniture: true,
-      isFavorite: false,
-      compare: false,
-    },
-    {
+    }),
+    _defineProperty(_ref2, 'image', './images/beds/furniture-bed-3.jpg'),
+    _defineProperty(_ref2, 'newFurniture', true),
+    _defineProperty(_ref2, 'isFavorite', false),
+    _defineProperty(_ref2, 'compare', false),
+    _ref2),
+    ((_ref3 = {
       id: 'aenean-ru-bristique-4',
       name: 'Aenean Ru Bristique 4',
       category: 'bed',
@@ -55,12 +93,13 @@ const initialState = {
       image: './images/fornitures-bed-4.jpg',
       stars: 2,
       promo: 'sale',
-      image: './images/beds/furniture-bed-4.jpg',
-      newFurniture: true,
-      isFavorite: false,
-      compare: false,
-    },
-    {
+    }),
+    _defineProperty(_ref3, 'image', './images/beds/furniture-bed-4.jpg'),
+    _defineProperty(_ref3, 'newFurniture', true),
+    _defineProperty(_ref3, 'isFavorite', false),
+    _defineProperty(_ref3, 'compare', false),
+    _ref3),
+    ((_ref4 = {
       id: 'aenean-ru-bristique-5',
       name: 'Aenean Ru Bristique 5',
       category: 'bed',
@@ -68,12 +107,13 @@ const initialState = {
       image: './images/fornitures-bed-5.jpg',
       stars: 2,
       promo: 'sale',
-      image: './images/beds/furniture-bed-5.jpg',
-      newFurniture: true,
-      isFavorite: false,
-      compare: false,
-    },
-    {
+    }),
+    _defineProperty(_ref4, 'image', './images/beds/furniture-bed-5.jpg'),
+    _defineProperty(_ref4, 'newFurniture', true),
+    _defineProperty(_ref4, 'isFavorite', false),
+    _defineProperty(_ref4, 'compare', false),
+    _ref4),
+    ((_ref5 = {
       id: 'aenean-ru-bristique-6',
       name: 'Aenean Ru Bristique 6',
       category: 'bed',
@@ -81,12 +121,13 @@ const initialState = {
       image: './images/fornitures-bed-6.jpg',
       stars: 2,
       promo: 'sale',
-      image: './images/beds/furniture-bed-6.jpg',
-      newFurniture: true,
-      isFavorite: false,
-      compare: false,
-    },
-    {
+    }),
+    _defineProperty(_ref5, 'image', './images/beds/furniture-bed-6.jpg'),
+    _defineProperty(_ref5, 'newFurniture', true),
+    _defineProperty(_ref5, 'isFavorite', false),
+    _defineProperty(_ref5, 'compare', false),
+    _ref5),
+    ((_ref6 = {
       id: 'aenean-ru-bristique-7',
       name: 'Aenean Ru Bristique 7',
       category: 'bed',
@@ -94,12 +135,13 @@ const initialState = {
       image: './images/fornitures-bed-7.jpg',
       stars: 2,
       promo: 'sale',
-      image: './images/beds/furniture-bed-7.jpg',
-      newFurniture: true,
-      isFavorite: false,
-      compare: false,
-    },
-    {
+    }),
+    _defineProperty(_ref6, 'image', './images/beds/furniture-bed-7.jpg'),
+    _defineProperty(_ref6, 'newFurniture', true),
+    _defineProperty(_ref6, 'isFavorite', false),
+    _defineProperty(_ref6, 'compare', false),
+    _ref6),
+    ((_ref7 = {
       id: 'aenean-ru-bristique-8',
       name: 'Aenean Ru Bristique 8',
       category: 'bed',
@@ -107,12 +149,13 @@ const initialState = {
       image: './images/fornitures-bed-8.jpg',
       stars: 2,
       promo: 'sale',
-      image: './images/beds/furniture-bed-8.jpg',
-      newFurniture: true,
-      isFavorite: false,
-      compare: false,
-    },
-    {
+    }),
+    _defineProperty(_ref7, 'image', './images/beds/furniture-bed-8.jpg'),
+    _defineProperty(_ref7, 'newFurniture', true),
+    _defineProperty(_ref7, 'isFavorite', false),
+    _defineProperty(_ref7, 'compare', false),
+    _ref7),
+    ((_ref8 = {
       id: 'aenean-ru-bristique-9',
       name: 'Aenean Ru Bristique 9',
       category: 'bed',
@@ -120,12 +163,13 @@ const initialState = {
       image: './images/fornitures-bed-9.jpg',
       stars: 2,
       promo: 'sale',
-      image: './images/beds/furniture-bed-9.jpg',
-      newFurniture: true,
-      isFavorite: false,
-      compare: false,
-    },
-    {
+    }),
+    _defineProperty(_ref8, 'image', './images/beds/furniture-bed-9.jpg'),
+    _defineProperty(_ref8, 'newFurniture', true),
+    _defineProperty(_ref8, 'isFavorite', false),
+    _defineProperty(_ref8, 'compare', false),
+    _ref8),
+    ((_ref9 = {
       id: 'aenean-ru-bristique-10',
       name: 'Aenean Ru Bristique 10',
       category: 'bed',
@@ -133,11 +177,12 @@ const initialState = {
       image: './images/fornitures-bed-10.jpg',
       stars: 2,
       promo: 'sale',
-      image: './images/beds/furniture-bed-10.jpg',
-      newFurniture: true,
-      isFavorite: false,
-      compare: false,
-    },
+    }),
+    _defineProperty(_ref9, 'image', './images/beds/furniture-bed-10.jpg'),
+    _defineProperty(_ref9, 'newFurniture', true),
+    _defineProperty(_ref9, 'isFavorite', false),
+    _defineProperty(_ref9, 'compare', false),
+    _ref9),
     {
       id: 'aenean-ru-bristique-11',
       name: 'Aenean Ru Bristique 11',
@@ -313,7 +358,6 @@ const initialState = {
       price: 30,
       priceOld: 45,
       stars: 2,
-
       promo: 'sale',
       image: './images/chairs/chair-1.jpg',
       newFurniture: true,
@@ -806,5 +850,5 @@ const initialState = {
     mediaQuery: 'desktop',
   },
 };
-
-export default initialState;
+var _default = initialState;
+exports['default'] = _default;
