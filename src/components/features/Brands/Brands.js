@@ -9,18 +9,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Brands = () => {
-  const [activePage, setActivePage] = useState(0);
   const allBrands = useSelector(getAllBrands);
   const [activeBrands, setActiveBrands] = useState('');
 
-  // dodać stan obecny czyli 6 zdjeć na sliderze
-  // nowy stan przesunięcię na kolejne 6 elementów.
-
   const rightSlide = e => {
     e.preventDefault();
-    setTimeout(() => {
-      setActiveBrands(activeBrands);
-    }, 500);
+    setActiveBrands(activeBrands);
   };
 
   return (
