@@ -10,7 +10,7 @@ const SaleBox = sale_img => {
         <div className={styles.wrapper}>
           <div className={styles.left_inner}>
             <div className={styles.box_img}>
-              <img src='./images/promotion-bed.jpg' alt='sale-left' />
+              <img src='./images/sales/promotion-bed.jpg' alt='sale-left' />
             </div>
             <p className={styles.promo_text}>
               GUEST ROOM<span> SOFA</span>
@@ -20,7 +20,7 @@ const SaleBox = sale_img => {
           <div className={styles.right_inner}>
             <div className={styles.top_inner}>
               <div className={styles.overlay_top}>
-                <img src='./images/furnitures-chairs.jpg' alt='sale' />{' '}
+                <img src='./images/sales/furnitures-chairs.jpg' alt='sale' />{' '}
               </div>
               <p className={styles.topSale_text}>
                 <strong>OFFICE</strong> CHAIR<span> COLLECTION</span>
@@ -29,7 +29,7 @@ const SaleBox = sale_img => {
             </div>
             <div className={styles.bottom_inner}>
               <div className={styles.overlay_bottom}>
-                <img src='./images/promotion-bed.jpg' alt='sale' />
+                <img src='./images/sales/promotion-bed.jpg' alt='sale' />
               </div>
               <p className={styles.bottomSale_text}>
                 <strong>SPECIAL</strong> COLLECTION
