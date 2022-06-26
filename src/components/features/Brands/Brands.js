@@ -10,11 +10,16 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Brands = () => {
   const allBrands = useSelector(getAllBrands);
-  const [activeBrands, setActiveBrands] = useState('');
+  const [activeBrands, setActiveBrands] = useState(0);
 
-  const rightSlide = e => {
+  const handleLeftSlide = e => {
     e.preventDefault();
-    setActiveBrands(activeBrands);
+    setActiveBrands(activeBrands - allBrands.length);
+  };
+
+  const handleRightSlide = e => {
+    e.preventDefault();
+    setActiveBrands(activeBrands + allBrands.length);
   };
 
   return (
@@ -22,7 +27,11 @@ const Brands = () => {
       <div className='container'>
         <div className='row'>
           <div className={styles.thumbnailNavigationWrapper}>
-            <Button className={styles.arrow} variant='small'>
+            <Button
+              className={styles.arrow}
+              variant='small'
+              onClick={e => handleLeftSlide(e)}
+            >
               <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
             </Button>
             {allBrands.map(item => (
@@ -39,7 +48,7 @@ const Brands = () => {
             <Button
               className={styles.arrow}
               variant='small'
-              onClick={e => rightSlide(e)}
+              onClick={e => handleRightSlide(e)}
             >
               <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
             </Button>

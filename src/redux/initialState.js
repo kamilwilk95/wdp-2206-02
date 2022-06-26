@@ -801,6 +801,42 @@ const initialState = {
       id: 6,
       image: '/images/brands/brands-6.jpg',
     },
+    {
+      id: 7,
+      image: '/images/brands/brands-7.jpg',
+    },
+    {
+      id: 8,
+      image: '/images/brands/brands-8.jpg',
+    },
+    {
+      id: 9,
+      image: '/images/brands/brands-9.jpg',
+    },
+    {
+      id: 10,
+      image: '/images/brands/brands-10.jpg',
+    },
+    {
+      id: 11,
+      image: '/images/brands/brands-11.jpg',
+    },
+    {
+      id: 12,
+      image: '/images/brands/brands-12.jpg',
+    },
+    {
+      id: 13,
+      image: '/images/brands/brands-13.jpg',
+    },
+    {
+      id: 14,
+      image: '/images/brands/brands-14.jpg',
+    },
+    {
+      id: 15,
+      image: '/images/brands/brands-15.jpg',
+    },
   ],
   settings: {
     mediaQuery: 'desktop',
