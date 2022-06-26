@@ -1,30 +1,70 @@
 
 
 
-# WDP Projekt Zespołowy
+# Furniture Shop
+![](https://i.ibb.co/XkVKthS/Screenshot-1.png)
 
-## Inicjacja projektu
 
-Po sklonowaniu projektu, zainstaluj wymagane paczki komendą `yarn install` (lub `npm install`).
+## Description
 
-Teraz możesz zacząć pracę, korzystając z przygotowanych taska `yarn start` (lub `npm start`).
+Online Furniture Shop - Bazar.
 
-Wszystkie potrzebne do pracy pliki źródłowe znajdują się w folderach `src` oraz `public`.
+Technologies used in project:
+
+* HTML5/CSS
+* JavaScript
+* React / Redux
+
+Project is based on free PSD template for front-end development training.
+
+Webpage is adjusted for usage on mobile devices/tablets and desktop.
+
+
+## Demo/Preview
+
+Link for webpage - comming later
+
+
+
+## Prerequisites
+
+* npm >= 5.5.0
+* node >= 14.0.0
+
+
+## Install:
+
+`npm install` or `yarn install`
+
+## Usage
+
+`npm start` or `yarn start`
+
+## Folder structure
+
+All source code files are located in `src` and `public` directories.
 
 ## NPM Scripts
 
-Dostępne są 3 główne skrypty przyspieszające pracę:
+Below there are main scripts that can be used during development.
 
-- `build`: na bazie plików z folderów `src` i `public` buduje project w folderze `build`
-- `start`: obserwuje zmiany w folderze `src` i uruchamia podgląd roboczy
-- `test`: uruchomienie testów jednostkowych
-- `refactor`: skrypt dokonuje automatycznego formatowania plików w folderze `src/`
-  zgodnie z przyjętą konwencją formatowania kodu, a także sprawdza błędy za pomocą ESLinta
+- `build`: based on code in `src` and `public` script builds ready to use project in `build` folder.
+- `start`: monitors changes in `src` folder and starts preview in browser.
+- `test`: starts unit tests.
+- `refactor`: script stars automatic formatting of code in `src/` folder according to good code practices and checks code with ESLINT.
+
 
 ## Git Hooks
 
-Projekt korzysta z Git Hooks - możliwości uruchamiania skryptów w reakcji na wybrane zdarzenia programu Git.
+Project uses GitHooks which allows running scripts dependant on Git actions.
 
-Za każdym razem gdy wykonasz komendę `git commit` zostaną uruchomione testy jednostkowe, formatowanie oraz lintowanie
-dla plików, które zostały wybrane za pomocą `git add` i mają być zapisane w commicie.
+Each time when you commit changes with `git commit` script starts unit tests, formatting and linting of files included in `git add`.
 
+## Authors
+
+* [sbjohansen](https://github.com/sbjohansen)
+* [sicArchitect](https://github.com/sicArchitect)
+* [Jakob20](https://github.com/Jacob120)
+* [KacperWielgosz](https://github.com/KacperWielgosz)
+
+Under supervision of [KamilWilk95](https://github.com/kamilwilk95)
