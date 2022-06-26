@@ -26,6 +26,7 @@ import { getGalleryCategories } from '../../../redux/categoriesRedux';
 
 const Gallery = () => {
   const dispatch = useDispatch();
+  const fadeTimer = 250;
   const allProducts = useSelector(getAll);
   const galleryCategories = useSelector(getGalleryCategories);
   const getCompareProducts = useSelector(getCompare);
@@ -42,14 +43,12 @@ const Gallery = () => {
     e.preventDefault();
     setActivatePhotoFade(true);
     setActivateSliderFade(true);
+
     setTimeout(() => {
       setActiveCategory(newCategory);
-
-      setTimeout(() => {
-        setActivatePhotoFade(false);
-        setActivateSliderFade(false);
-      }, 250);
-    }, 250);
+      setActivatePhotoFade(false);
+      setActivateSliderFade(false);
+    }, fadeTimer);
   };
 
   useEffect(() => {
@@ -59,12 +58,11 @@ const Gallery = () => {
   const handleProductChange = (e, newProduct) => {
     e.preventDefault();
     setActivatePhotoFade(true);
+
     setTimeout(() => {
       setActiveProduct(newProduct);
-      setTimeout(() => {
-        setActivatePhotoFade(false);
-      }, 250);
-    }, 250);
+      setActivatePhotoFade(false);
+    }, fadeTimer);
   };
 
   useEffect(() => {
