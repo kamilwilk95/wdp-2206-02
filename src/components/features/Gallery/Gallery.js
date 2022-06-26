@@ -86,14 +86,22 @@ const Gallery = () => {
   const handleRight = e => {
     e.preventDefault();
     if (productIndex < categoryProducts.length - 1) {
-      setActiveProduct(categoryProducts[productIndex + 1].id);
+      setActivatePhotoFade(true);
+      setTimeout(() => {
+        setActiveProduct(categoryProducts[productIndex + 1].id);
+        setActivatePhotoFade(false);
+      }, fadeTimer);
     }
   };
 
   const handleLeft = e => {
     e.preventDefault();
     if (productIndex > 0) {
-      setActiveProduct(categoryProducts[productIndex - 1].id);
+      setActivatePhotoFade(true);
+      setTimeout(() => {
+        setActiveProduct(categoryProducts[productIndex - 1].id);
+        setActivatePhotoFade(false);
+      }, fadeTimer);
     }
   };
 
