@@ -1,5 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
+import { getAllBrands } from '../../../redux/brandsRedux';
+import { getMediaQuery } from '../../../redux/settingsReducer';
 
 import styles from './Brands.module.scss';
 import Button from '../../common/Button/Button';
@@ -7,49 +10,65 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Brands = () => {
+  const allBrands = useSelector(getAllBrands);
+  const [activeBrands, setActiveBrands] = useState(0);
+  const mediaQuery = useSelector(getMediaQuery);
+  const [brandsAmount, setBrandsAmount] = useState(6);
+
+  useEffect(() => {
+    if (mediaQuery === 'desktop') {
+      setBrandsAmount(6);
+    }
+    if (mediaQuery === 'tablet') {
+      setBrandsAmount(5);
+    }
+    if (mediaQuery === 'mobile') {
+      setBrandsAmount(4);
+    }
+  }, [mediaQuery]);
+
+  const handleLeftSlide = e => {
+    e.preventDefault();
+    if (activeBrands > brandsAmount - activeBrands - 1) {
+      setActiveBrands(activeBrands - brandsAmount);
+    }
+  };
+
+  const handleRightSlide = e => {
+    e.preventDefault();
+    if (activeBrands < brandsAmount - activeBrands) {
+      setActiveBrands(activeBrands + brandsAmount);
+    }
+  };
+
   return (
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
           <div className={styles.thumbnailNavigationWrapper}>
-            <Button className={styles.arrow} variant='small'>
+            <Button
+              className={styles.arrow}
+              variant='small'
+              onClick={e => handleLeftSlide(e)}
+            >
               <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
             </Button>
             <div className={styles.thumbnailMenu}>
               <ul>
-                <li>
-                  <a href='#' className={styles.activeThumbnail}>
-                    <img src='/images/brands/brands-1.jpg' alt='brand'></img>
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src='/images/brands/brands-2.jpg' alt='brands'></img>
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src='/images/brands/brands-3.jpg' alt='brands'></img>
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src='/images/brands/brands-4.jpg' alt='brands'></img>
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src='/images/brands/brands-5.jpg' alt='brands'></img>
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src='/images/brands/brands-6.jpg' alt='brands'></img>
-                  </a>
-                </li>
+                {allBrands.slice(activeBrands, activeBrands + 6).map(item => (
+                  <li key={item.id}>
+                    <a href='#' className={styles.activeThumbnail}>
+                      <img src={item.image} alt='brands' />
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
-            <Button className={styles.arrow} variant='small'>
+            <Button
+              className={styles.arrow}
+              variant='small'
+              onClick={e => handleRightSlide(e)}
+            >
               <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
             </Button>
           </div>

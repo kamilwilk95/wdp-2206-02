@@ -33,6 +33,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 2',
       category: 'bed',
       price: 30,
+      image: './images/fornitures-bed-2.jpg',
       stars: 2,
       promo: 'sale',
       image: './images/beds/furniture-bed-2.jpg',
@@ -46,6 +47,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 3',
       category: 'bed',
       price: 30,
+      image: './images/fornitures-bed-3.jpg',
       stars: 2,
       promo: 'sale',
       image: './images/beds/furniture-bed-3.jpg',
@@ -59,6 +61,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 4',
       category: 'bed',
       price: 30,
+      image: './images/fornitures-bed-4.jpg',
       stars: 2,
       promo: 'sale',
       image: './images/beds/furniture-bed-4.jpg',
@@ -72,6 +75,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 5',
       category: 'bed',
       price: 30,
+      image: './images/fornitures-bed-5.jpg',
       stars: 2,
       promo: 'sale',
       image: './images/beds/furniture-bed-5.jpg',
@@ -85,6 +89,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 6',
       category: 'bed',
       price: 30,
+      image: './images/fornitures-bed-6.jpg',
       stars: 2,
       promo: 'sale',
       image: './images/beds/furniture-bed-6.jpg',
@@ -98,6 +103,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 7',
       category: 'bed',
       price: 30,
+      image: './images/fornitures-bed-7.jpg',
       stars: 2,
       promo: 'sale',
       image: './images/beds/furniture-bed-7.jpg',
@@ -110,6 +116,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 8',
       category: 'bed',
       price: 30,
+      image: './images/fornitures-bed-8.jpg',
       stars: 2,
       promo: 'sale',
       image: './images/beds/furniture-bed-8.jpg',
@@ -122,6 +129,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 9',
       category: 'bed',
       price: 30,
+      image: './images/fornitures-bed-9.jpg',
       stars: 2,
       promo: 'sale',
       image: './images/beds/furniture-bed-9.jpg',
@@ -134,6 +142,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 10',
       category: 'bed',
       price: 30,
+      image: './images/fornitures-bed-10.jpg',
       stars: 2,
       promo: 'sale',
       image: './images/beds/furniture-bed-10.jpg',
@@ -794,6 +803,56 @@ const initialState = {
       content:
         'Lorem ipsum dolor sit amet, habeo decore id vix. Te nam tollit nominati concludaturque. Usu principes reformidans eu. In pro inermis aliquando. Aperiri laoreet oporteat an mei, mel.',
       photo: '/images/feedback/portrait5.png',
+    },
+  ],
+  brands: [
+    {
+      id: 1,
+      image: '/images/brands/brands-1.jpg',
+    },
+    {
+      id: 2,
+      image: '/images/brands/brands-2.jpg',
+    },
+    {
+      id: 3,
+      image: '/images/brands/brands-3.jpg',
+    },
+    {
+      id: 4,
+      image: '/images/brands/brands-4.jpg',
+    },
+    {
+      id: 5,
+      image: '/images/brands/brands-5.jpg',
+    },
+    {
+      id: 6,
+      image: '/images/brands/brands-6.jpg',
+    },
+    {
+      id: 7,
+      image: '/images/brands/brands-7.jpg',
+    },
+    {
+      id: 8,
+      image: '/images/brands/brands-8.jpg',
+    },
+    {
+      id: 9,
+      image: '/images/brands/brands-9.jpg',
+    },
+    {
+      id: 10,
+      image: '/images/brands/brands-10.jpg',
+    },
+    {
+      id: 11,
+      image: '/images/brands/brands-11.jpg',
+    },
+    {
+      id: 12,
+      image: '/images/brands/brands-12.jpg',
     },
   ],
   settings: {

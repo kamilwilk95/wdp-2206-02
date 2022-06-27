@@ -2,6 +2,9 @@
 
 .root {
   padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+
   .thumbnailNavigationWrapper {
     padding: 10px;
     display: flex;
