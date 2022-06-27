@@ -119,13 +119,21 @@ const Gallery = () => {
 
   const rightAction = () => {
     if (productIndex > 0) {
-      setActiveProduct(categoryProducts[productIndex - 1].id);
+      setActivatePhotoFade(true);
+      setTimeout(() => {
+        setActiveProduct(categoryProducts[productIndex - 1].id);
+        setActivatePhotoFade(false);
+      }, fadeTimer);
     }
   };
 
   const leftAction = () => {
     if (productIndex < thumbnailProductsAmount - 1) {
-      setActiveProduct(categoryProducts[productIndex + 1].id);
+      setActivatePhotoFade(true);
+      setTimeout(() => {
+        setActiveProduct(categoryProducts[productIndex + 1].id);
+        setActivatePhotoFade(false);
+      }, fadeTimer);
     }
   };
 
