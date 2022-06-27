@@ -14,12 +14,12 @@ const Brands = () => {
 
   const handleLeftSlide = e => {
     e.preventDefault();
-    setActiveBrands(activeBrands - allBrands.length);
+    setActiveBrands(activeBrands - 6);
   };
 
   const handleRightSlide = e => {
     e.preventDefault();
-    setActiveBrands(activeBrands + allBrands.length);
+    setActiveBrands(activeBrands + 6);
   };
 
   return (
@@ -34,7 +34,7 @@ const Brands = () => {
             >
               <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
             </Button>
-            {allBrands.map(item => (
+            {allBrands.slice(0, 6).map(item => (
               <div className={styles.thumbnailMenu} key={item.id}>
                 <ul>
                   <li>
