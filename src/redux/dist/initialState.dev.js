@@ -869,18 +869,6 @@ var initialState = {
       id: 12,
       image: '/images/brands/brands-12.jpg',
     },
-    {
-      id: 13,
-      image: '/images/brands/brands-13.jpg',
-    },
-    {
-      id: 14,
-      image: '/images/brands/brands-14.jpg',
-    },
-    {
-      id: 15,
-      image: '/images/brands/brands-15.jpg',
-    },
   ],
   settings: {
     mediaQuery: 'desktop',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { getAllBrands } from '../../../redux/brandsRedux';
@@ -11,15 +11,24 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 const Brands = () => {
   const allBrands = useSelector(getAllBrands);
   const [activeBrands, setActiveBrands] = useState(0);
+  const [brandIndex, setBrandIndex] = useState(0);
+
+  useEffect(() => {
+    setBrandIndex(allBrands.indexOf(allBrands[0].id));
+  }, [activeBrands, allBrands]);
 
   const handleLeftSlide = e => {
     e.preventDefault();
-    setActiveBrands(activeBrands - 6);
+    if (brandIndex > 0) {
+      setActiveBrands(activeBrands - 6);
+    }
   };
 
   const handleRightSlide = e => {
     e.preventDefault();
-    setActiveBrands(activeBrands + 6);
+    if (brandIndex < allBrands.length - 1) {
+      setActiveBrands(activeBrands + 6);
+    }
   };
 
   return (
@@ -34,17 +43,17 @@ const Brands = () => {
             >
               <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
             </Button>
-            {allBrands.slice(0, 6).map(item => (
-              <div className={styles.thumbnailMenu} key={item.id}>
-                <ul>
-                  <li>
+            <div className={styles.thumbnailMenu}>
+              <ul>
+                {allBrands.slice(activeBrands, activeBrands + 6).map(item => (
+                  <li key={item.id}>
                     <a href='#' className={styles.activeThumbnail}>
                       <img src={item.image} alt='brands' />
                     </a>
                   </li>
-                </ul>
-              </div>
-            ))}
+                ))}
+              </ul>
+            </div>
             <Button
               className={styles.arrow}
               variant='small'
