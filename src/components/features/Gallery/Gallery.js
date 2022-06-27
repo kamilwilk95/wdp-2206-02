@@ -16,6 +16,7 @@ import {
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import ReactTooltip from 'react-tooltip';
 import StarsRating from '../StarsRating/StarsRating';
+import Swipe from '../../common/Swipe/Swipe';
 import {
   getAll,
   getCompare,
@@ -23,21 +24,25 @@ import {
   toggleFavoriteProduct,
 } from '../../../redux/productsRedux';
 import { getGalleryCategories } from '../../../redux/categoriesRedux';
+import { getMediaQuery } from '../../../redux/settingsReducer';
 
 const Gallery = () => {
   const dispatch = useDispatch();
   const fadeTimer = 250;
   const allProducts = useSelector(getAll);
+  const mediaQuery = useSelector(getMediaQuery);
   const galleryCategories = useSelector(getGalleryCategories);
   const getCompareProducts = useSelector(getCompare);
   const [activatePhotoFade, setActivatePhotoFade] = useState(false);
   const [activateSliderFade, setActivateSliderFade] = useState(false);
   const [activeCategory, setActiveCategory] = useState('topSeller');
   const [productIndex, setProductIndex] = useState(0);
+  const [thumbnailProductsAmount, setThumbnailProductsAmount] = useState(6);
 
   const categoryProducts = allProducts.filter(
     item => item.galleryCategory === activeCategory
   );
+
   const [activeProduct, setActiveProduct] = useState(categoryProducts[0].id);
   const handleCategoryChange = (e, newCategory) => {
     e.preventDefault();
@@ -83,9 +88,16 @@ const Gallery = () => {
     dispatch(toggleFavoriteProduct(id));
   };
 
+  useEffect(() => {
+    if (mediaQuery === 'desktop') setThumbnailProductsAmount(6);
+    if (mediaQuery === 'tablet') setThumbnailProductsAmount(5);
+    if (mediaQuery === 'mobile') setThumbnailProductsAmount(4);
+  }, [mediaQuery]);
+
   const handleRight = e => {
     e.preventDefault();
-    if (productIndex < categoryProducts.length - 1) {
+
+    if (productIndex < thumbnailProductsAmount - 1) {
       setActivatePhotoFade(true);
       setTimeout(() => {
         setActiveProduct(categoryProducts[productIndex + 1].id);
@@ -102,6 +114,18 @@ const Gallery = () => {
         setActiveProduct(categoryProducts[productIndex - 1].id);
         setActivatePhotoFade(false);
       }, fadeTimer);
+    }
+  };
+
+  const rightAction = () => {
+    if (productIndex > 0) {
+      setActiveProduct(categoryProducts[productIndex - 1].id);
+    }
+  };
+
+  const leftAction = () => {
+    if (productIndex < thumbnailProductsAmount - 1) {
+      setActiveProduct(categoryProducts[productIndex + 1].id);
     }
   };
 
@@ -141,138 +165,152 @@ const Gallery = () => {
             </div>
 
             {/* Left box */}
-            <div className={styles.box_left}>
-              <div
-                className={
-                  activatePhotoFade === true
-                    ? styles.fadeIn + ' ' + styles.promoted
-                    : styles.fadeOut + ' ' + styles.promoted
-                }
-              >
-                <img
-                  src={showProduct.image}
-                  alt={showProduct.name}
-                  className={styles.images}
-                ></img>
-                <div className={styles.actions}>
-                  <div className={styles.outlines}>
-                    <Button
-                      className={
-                        showProduct.isFavorite ? 'mb-1 ' + styles.isFavorite : 'mb-1'
-                      }
-                      variant='outline-orange'
-                      data-tip='Add to favorite'
-                      data-for='favorite'
-                      onClick={e => handleFavorite(e, showProduct.id)}
-                    >
-                      <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-                    </Button>
-                    <ReactTooltip
-                      id='favorite'
-                      place='right'
-                      type='dark'
-                      effect='float'
-                    />
-                    <Button
-                      className={
-                        showProduct.compare ? 'mb-1 ' + styles.compare : 'mb-1'
-                      }
-                      variant='outline-orange'
-                      data-tip='Add to compare'
-                      data-for='compare'
-                      onClick={e => handleCompare(e, showProduct.id)}
-                    >
-                      <FontAwesomeIcon icon={faExchangeAlt}>
-                        Add to compare
-                      </FontAwesomeIcon>
-                    </Button>
-                    <ReactTooltip
-                      id='compare'
-                      place='right'
-                      type='dark'
-                      effect='float'
-                    />
-                    <Button
-                      className='mb-1'
-                      variant='outline-orange'
-                      data-tip='Quick View'
-                      data-for='view'
-                      onClick={e => handleClick(e)}
-                    >
-                      <FontAwesomeIcon icon={faEye}>Show</FontAwesomeIcon>
-                    </Button>
-                    <ReactTooltip id='view' place='right' type='dark' effect='float' />
-                    <Button
-                      className=''
-                      variant='outline-orange'
-                      data-tip='Add to cart'
-                      data-for='cart'
-                      onClick={e => handleClick(e)}
-                    >
-                      <FontAwesomeIcon icon={faShoppingBasket}>
-                        Add to cart
-                      </FontAwesomeIcon>
-                    </Button>
-                    <ReactTooltip id='cart' place='right' type='dark' effect='float' />
+            <Swipe leftAction={leftAction} rightAction={rightAction}>
+              <div className={styles.box_left}>
+                <div
+                  className={
+                    activatePhotoFade === true
+                      ? styles.fadeIn + ' ' + styles.promoted
+                      : styles.fadeOut + ' ' + styles.promoted
+                  }
+                >
+                  <img
+                    src={showProduct.image}
+                    alt={showProduct.name}
+                    className={styles.images}
+                  ></img>
+                  <div className={styles.actions}>
+                    <div className={styles.outlines}>
+                      <Button
+                        className={
+                          showProduct.isFavorite ? 'mb-1 ' + styles.isFavorite : 'mb-1'
+                        }
+                        variant='outline-orange'
+                        data-tip='Add to favorite'
+                        data-for='favorite'
+                        onClick={e => handleFavorite(e, showProduct.id)}
+                      >
+                        <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+                      </Button>
+                      <ReactTooltip
+                        id='favorite'
+                        place='right'
+                        type='dark'
+                        effect='float'
+                      />
+                      <Button
+                        className={
+                          showProduct.compare ? 'mb-1 ' + styles.compare : 'mb-1'
+                        }
+                        variant='outline-orange'
+                        data-tip='Add to compare'
+                        data-for='compare'
+                        onClick={e => handleCompare(e, showProduct.id)}
+                      >
+                        <FontAwesomeIcon icon={faExchangeAlt}>
+                          Add to compare
+                        </FontAwesomeIcon>
+                      </Button>
+                      <ReactTooltip
+                        id='compare'
+                        place='right'
+                        type='dark'
+                        effect='float'
+                      />
+                      <Button
+                        className='mb-1'
+                        variant='outline-orange'
+                        data-tip='Quick View'
+                        data-for='view'
+                        onClick={e => handleClick(e)}
+                      >
+                        <FontAwesomeIcon icon={faEye}>Show</FontAwesomeIcon>
+                      </Button>
+                      <ReactTooltip
+                        id='view'
+                        place='right'
+                        type='dark'
+                        effect='float'
+                      />
+                      <Button
+                        className=''
+                        variant='outline-orange'
+                        data-tip='Add to cart'
+                        data-for='cart'
+                        onClick={e => handleClick(e)}
+                      >
+                        <FontAwesomeIcon icon={faShoppingBasket}>
+                          Add to cart
+                        </FontAwesomeIcon>
+                      </Button>
+                      <ReactTooltip
+                        id='cart'
+                        place='right'
+                        type='dark'
+                        effect='float'
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className={styles.product_info}>
-                  <div className={styles.price}>
-                    <p className='m-0'>${showProduct.price}</p>
-                    <p className={styles.old_price}>
-                      {showProduct.priceOld ? '$' + showProduct.priceOld : ' $160'}
-                    </p>
+                  <div className={styles.product_info}>
+                    <div className={styles.price}>
+                      <p className='m-0'>${showProduct.price}</p>
+                      <p className={styles.old_price}>
+                        {showProduct.priceOld ? '$' + showProduct.priceOld : ' $160'}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className={styles.frame_wrapper}>
-                  <div className={styles.frame}>
-                    <p className={styles.product_name}>{showProduct.name}</p>
-                    <StarsRating id={showProduct.id} stars={showProduct.stars} />
+                  <div className={styles.frame_wrapper}>
+                    <div className={styles.frame}>
+                      <p className={styles.product_name}>{showProduct.name}</p>
+                      <StarsRating id={showProduct.id} stars={showProduct.stars} />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Swipe>
 
             {/* Thumbnail menu on the bottom  */}
-            <div
-              className={
-                activateSliderFade === true
-                  ? styles.fadeIn + ' ' + styles.thumbnailNavigationWrapper
-                  : styles.fadeOut + ' ' + styles.thumbnailNavigationWrapper
-              }
-            >
-              <Button
-                className={styles.arrow}
-                variant='small'
-                onClick={e => handleLeft(e)}
+            <Swipe leftAction={leftAction} rightAction={rightAction}>
+              <div
+                className={
+                  activateSliderFade === true
+                    ? styles.fadeIn + ' ' + styles.thumbnailNavigationWrapper
+                    : styles.fadeOut + ' ' + styles.thumbnailNavigationWrapper
+                }
               >
-                <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
-              </Button>
-              <div className={styles.thumbnailMenu}>
-                <ul>
-                  {categoryProducts.map(item => (
-                    <li key={item.id}>
-                      <a
-                        href='#'
-                        className={
-                          item.id === activeProduct ? styles.activeThumbnail : ''
-                        }
-                        onClick={e => handleProductChange(e, item.id)}
-                      >
-                        <img src={item.image} alt='chair'></img>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <Button
+                  className={styles.arrow}
+                  variant='small'
+                  onClick={e => handleLeft(e)}
+                >
+                  <FontAwesomeIcon icon={faAngleLeft}>Left</FontAwesomeIcon>
+                </Button>
+                <div className={styles.thumbnailMenu}>
+                  <ul>
+                    {categoryProducts.slice(0, thumbnailProductsAmount).map(item => (
+                      <li key={item.id}>
+                        <a
+                          href='#'
+                          className={
+                            item.id === activeProduct ? styles.activeThumbnail : ''
+                          }
+                          onClick={e => handleProductChange(e, item.id)}
+                        >
+                          <img src={item.image} alt='chair'></img>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Button
+                  className={styles.arrow}
+                  variant='small'
+                  onClick={e => handleRight(e)}
+                >
+                  <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
+                </Button>
               </div>
-              <Button
-                className={styles.arrow}
-                variant='small'
-                onClick={e => handleRight(e)}
-              >
-                <FontAwesomeIcon icon={faAngleRight}>Right</FontAwesomeIcon>
-              </Button>
-            </div>
+            </Swipe>
           </div>
 
           {/*  Right Box  */}

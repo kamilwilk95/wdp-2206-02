@@ -209,6 +209,7 @@
       list-style: none;
       display: flex;
       position: relative;
+      width: 100%;
 
       li {
         width: 70px;
@@ -272,18 +273,21 @@
           width: 160px;
         }
       }
-    }
-    .right_image:after {
-      content: "";
-      background-color: $header-topbar-bg;
-      height: 200px;
-      width: 100%;
-      opacity: 0.7;
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
+      &:after {
+        content: "";
+        background-color: $header-topbar-bg;
+        height: 200px;
+        width: 100%;
+        opacity: 0.7;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        @media all and (max-width: 768px) {
+          top: 40%;
+        }
+      }
     }
   }
 }
