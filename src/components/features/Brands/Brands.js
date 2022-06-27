@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { getAllBrands } from '../../../redux/brandsRedux';
+import { getMediaQuery } from '../../../redux/settingsReducer';
 
 import styles from './Brands.module.scss';
 import Button from '../../common/Button/Button';
@@ -11,18 +12,32 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 const Brands = () => {
   const allBrands = useSelector(getAllBrands);
   const [activeBrands, setActiveBrands] = useState(0);
+  const mediaQuery = useSelector(getMediaQuery);
+  const [brandsAmount, setBrandsAmount] = useState(6);
+
+  useEffect(() => {
+    if (mediaQuery === 'desktop') {
+      setBrandsAmount(6);
+    }
+    if (mediaQuery === 'tablet') {
+      setBrandsAmount(5);
+    }
+    if (mediaQuery === 'mobile') {
+      setBrandsAmount(4);
+    }
+  }, [mediaQuery]);
 
   const handleLeftSlide = e => {
     e.preventDefault();
-    if (activeBrands > allBrands.length - activeBrands - 1) {
-      setActiveBrands(activeBrands - 6);
+    if (activeBrands > brandsAmount - activeBrands - 1) {
+      setActiveBrands(activeBrands - brandsAmount);
     }
   };
 
   const handleRightSlide = e => {
     e.preventDefault();
-    if (activeBrands < allBrands.length - activeBrands) {
-      setActiveBrands(activeBrands + 6);
+    if (activeBrands < brandsAmount - activeBrands) {
+      setActiveBrands(activeBrands + brandsAmount);
     }
   };
 
