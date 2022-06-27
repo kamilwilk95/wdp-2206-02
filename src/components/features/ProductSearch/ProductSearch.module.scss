@@ -64,3 +64,45 @@
     }
   }
 }
+
+@media (max-width: 485px) {
+  .root {
+    .category {
+      select {
+        font-size: 8px;
+      }
+    }
+    .searchField {
+      input {
+        font-size: 8px;
+        &::placeholder {
+          font-size: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .root {
+    .category {
+      select {
+        font-size: 7px;
+      }
+    }
+    .searchField {
+      input {
+        font-size: 7px;
+        &::placeholder {
+          font-size: 7px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .root {
+    padding-left: 50px;
+  }
+}
