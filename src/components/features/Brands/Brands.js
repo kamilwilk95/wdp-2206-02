@@ -11,22 +11,17 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 const Brands = () => {
   const allBrands = useSelector(getAllBrands);
   const [activeBrands, setActiveBrands] = useState(0);
-  const [brandIndex, setBrandIndex] = useState(0);
-
-  useEffect(() => {
-    setBrandIndex(allBrands.indexOf(allBrands[0].id));
-  }, [activeBrands, allBrands]);
 
   const handleLeftSlide = e => {
     e.preventDefault();
-    if (brandIndex > 0) {
+    if (activeBrands > allBrands.length - activeBrands - 1) {
       setActiveBrands(activeBrands - 6);
     }
   };
 
   const handleRightSlide = e => {
     e.preventDefault();
-    if (brandIndex < allBrands.length - 1) {
+    if (activeBrands < allBrands.length - activeBrands) {
       setActiveBrands(activeBrands + 6);
     }
   };
