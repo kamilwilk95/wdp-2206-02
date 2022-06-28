@@ -1,16 +1,17 @@
 @import "../../../styles/settings.scss";
 
 .root {
+  position: relative;
   box-shadow: 2px 3.464px 6px $box-shadow;
   background-color: #ffffff;
 
   :global(.container) > :global(.row) {
-    height: 84px;
+    height: 120px;
   }
 
   .menu {
-    display: flex;
     align-self: stretch;
+    display: flex;
 
     ul {
       margin: 0;
@@ -47,6 +48,28 @@
       &.active {
         border-color: $text-color;
       }
+    }
+  }
+}
+
+@media (max-width: 994px) {
+  .menu {
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+
+    .searchField {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .menu {
+    flex-wrap: nowrap;
+
+    .searchField {
+      display: flex;
     }
   }
 }
