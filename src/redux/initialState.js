@@ -6,6 +6,12 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
+  galleryCategories: [
+    { id: 'featured', name: 'Featured' },
+    { id: 'topSeller', name: 'Top Seller' },
+    { id: 'saleOff', name: 'Sale Off' },
+    { id: 'topRated', name: 'Top Rated' },
+  ],
   products: [
     {
       id: 'aenean-ru-bristique-1',
@@ -20,6 +26,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: true,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -33,6 +40,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: true,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -46,6 +54,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -59,6 +68,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -72,6 +82,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -85,6 +96,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'featured',
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -318,6 +330,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-2',
@@ -330,6 +343,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-3',
@@ -342,6 +356,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-4',
@@ -355,6 +370,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-5',
@@ -367,6 +383,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-6',
@@ -379,6 +396,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topSeller',
     },
     {
       id: 'comfortable-chair-7',
@@ -418,6 +436,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-2',
@@ -430,6 +449,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-3',
@@ -443,6 +463,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-4',
@@ -455,6 +476,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-5',
@@ -467,6 +489,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-6',
@@ -479,6 +502,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'saleOff',
     },
     {
       id: 'comfortable-sofa-7',
@@ -516,6 +540,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-2',
@@ -528,6 +553,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-3',
@@ -540,6 +566,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-4',
@@ -552,6 +579,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-5',
@@ -564,6 +592,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-6',
@@ -576,11 +605,13 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      galleryCategory: 'topRated',
     },
     {
       id: 'table-collection-7',
       name: 'Table Rivia #7',
       category: 'table',
+      priceOld: 50,
       price: 30,
       stars: 3,
       promo: 'sale',
@@ -588,6 +619,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      hotDeal: true,
     },
     {
       id: 'table-collection-8',
@@ -605,6 +637,7 @@ const initialState = {
       id: 'dining-collection-1',
       name: 'Dining Collection 1',
       category: 'dining',
+      priceOld: 600,
       price: 530,
       stars: 4,
       promo: 'sale',
@@ -612,6 +645,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      hotDeal: true,
     },
     {
       id: 'dining-collection-2',
@@ -641,6 +675,7 @@ const initialState = {
       id: 'dining-collection-4',
       name: 'Dining Collection 4',
       category: 'dining',
+      priceOld: 520,
       price: 419,
       stars: 3,
       promo: 'sale',
@@ -648,6 +683,7 @@ const initialState = {
       newFurniture: true,
       isFavorite: false,
       compare: false,
+      hotDeal: true,
     },
     {
       id: 'dining-collection-5',
@@ -698,48 +734,32 @@ const initialState = {
       compare: false,
     },
   ],
-  hotDeals: [
+  promo: [
     {
-      id: 'aenean-ru-bristique-25',
-      name: 'Aenean Ru Bristique 25',
-      category: 'bed',
-      image: './images/furniture-bed-26.jpg',
-
-      price: 300,
-      priceOld: 350,
-      stars: 2,
-      promo: 'sale',
-      newFurniture: false,
-      isFavorite: false,
-      compare: false,
+      id: 1,
+      titleFirst: 'INDOOR',
+      titleSecond: 'FURNITURE',
+      subtitle: 'SAVE UP TO 50% OF ALL FURNITURE',
+      image: '/images/promotions/indoor-furniture.jpg',
+      imageAlt: 'indoor-furniture',
     },
     {
-      id: 'aenean-ru-bristique-26',
-      name: 'Aenean Ru Bristique 26',
-      category: 'bed',
-      image: './images/furniture-bed-26.jpg',
-
-      price: 30,
-      stars: 2,
-      promo: 'sale',
-      newFurniture: false,
-      isFavorite: false,
-      compare: false,
+      id: 2,
+      titleFirst: 'OUTLET',
+      titleSecond: 'SALE',
+      subtitle: 'DISCOUNT UP TO 90% !!!',
+      image: '/images/promotions/outlet-furniture.jpg',
+      imageAlt: 'outlet-furniture',
     },
     {
-      id: 'aenean-ru-bristique-27',
-      name: 'Aenean Ru Bristique 27',
-      category: 'bed',
-      image: './images/furnitures-bed-27.jpg',
-      price: 30,
-      stars: 2,
-      promo: 'sale',
-      newFurniture: false,
-      isFavorite: false,
-      compare: false,
+      id: 3,
+      titleFirst: 'GARDEN',
+      titleSecond: 'COLLECTION',
+      subtitle: 'START SUMMER SEASON WITH STYLE',
+      image: '/images/promotions/garden-furniture.jpg',
+      imageAlt: 'garden-furniture',
     },
   ],
-
   cart: {
     products: [],
   },
@@ -783,6 +803,56 @@ const initialState = {
       content:
         'Lorem ipsum dolor sit amet, habeo decore id vix. Te nam tollit nominati concludaturque. Usu principes reformidans eu. In pro inermis aliquando. Aperiri laoreet oporteat an mei, mel.',
       photo: '/images/feedback/portrait5.png',
+    },
+  ],
+  brands: [
+    {
+      id: 1,
+      image: '/images/brands/brands-1.jpg',
+    },
+    {
+      id: 2,
+      image: '/images/brands/brands-2.jpg',
+    },
+    {
+      id: 3,
+      image: '/images/brands/brands-3.jpg',
+    },
+    {
+      id: 4,
+      image: '/images/brands/brands-4.jpg',
+    },
+    {
+      id: 5,
+      image: '/images/brands/brands-5.jpg',
+    },
+    {
+      id: 6,
+      image: '/images/brands/brands-6.jpg',
+    },
+    {
+      id: 7,
+      image: '/images/brands/brands-7.jpg',
+    },
+    {
+      id: 8,
+      image: '/images/brands/brands-8.jpg',
+    },
+    {
+      id: 9,
+      image: '/images/brands/brands-9.jpg',
+    },
+    {
+      id: 10,
+      image: '/images/brands/brands-10.jpg',
+    },
+    {
+      id: 11,
+      image: '/images/brands/brands-11.jpg',
+    },
+    {
+      id: 12,
+      image: '/images/brands/brands-12.jpg',
     },
   ],
   settings: {
